@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Basic knowledge of ODE (Building...)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ordinary Differential Equations (From Mathematical Physics, by Sadri Hassani)">
+<meta property="og:url" content="http://example.com/2024/11/13/Ordinary%20Differential%20Equations%20(From%20Mathematical%20Physics,%20by%20Sadri%20Hassani)/index.html">
+<meta property="og:site_name" content="KunziBa 的个人主页">
+<meta property="og:description" content="Basic knowledge of ODE (Building...)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-13T15:35:00.000Z">
+<meta property="article:modified_time" content="2024-11-13T15:41:49.755Z">
+<meta property="article:author" content="KunziBa">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/11/13/Ordinary%20Differential%20Equations%20(From%20Mathematical%20Physics,%20by%20Sadri%20Hassani)/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Ordinary Differential Equations (From Mathematical Physics, by Sadri Hassani) | KunziBa 的个人主页</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KunziBa 的个人主页</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/13/Ordinary%20Differential%20Equations%20(From%20Mathematical%20Physics,%20by%20Sadri%20Hassani)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="KunziBa">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KunziBa 的个人主页">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ordinary Differential Equations (From Mathematical Physics, by Sadri Hassani)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-13 23:35:00 / 修改时间：23:41:49" itemprop="dateCreated datePublished" datetime="2024-11-13T23:35:00+08:00">2024-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%B2%E4%B9%89%E5%92%8C%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">讲义和笔记</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Basic knowledge of ODE (Building...)</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>The main structure and methods were from the book, and I added some personal ideas and detailed process that may be of help to better understand the book. </p>
+<h2 id="General-Forms-and-Properties"><a href="#General-Forms-and-Properties" class="headerlink" title="General Forms and Properties"></a>General Forms and Properties</h2><ul>
+<li><p>The general form of an n-order differential equation is:<br>$$<br>G(x,y,y’,\cdots,y^{(n)})&#x3D;0<br>$$</p>
+</li>
+<li><p>Linearity and homogeneity</p>
+<p>When we say a differential equation is <strong>linear</strong>, it’s linear to $ y$ and its derivatives, i.e.<br>$$<br>\frac{\partial^2 G}{\partial (y^{(k)})^2}&#x3D;0\quad \mbox{for} \quad k&#x3D;0,1,\cdots,n<br>$$<br>or if we can write $ G$ as a explicit function, linearity means:<br>$$<br>p_0(x)y+p_1(x)\frac{\text{d}y}{\text{d}x}+\cdots+p_n (x)\frac{\text{d}^n y}{\text{d}x^n}&#x3D;q(x)<br>$$<br>Let linear operator<br>$$<br>\hat{L}&#x3D;p_0+p_1\hat{D}+\cdots+p_n \hat{D}^n<br>$$<br>LDE can be written as<br>$$<br>\hat{L}{y}&#x3D;q(x)<br>$$<br>And the equation is said to be <strong>homogeneous</strong> when $ q(x)&#x3D;0$.</p>
+</li>
+<li><p>Solutions: A solution of a differential equation is a single-variable function such that $ G(x,f,f’,\cdots,f^{n}&#x3D;0)$, for all $ x$ in the domain of definition of $ f$ . If we put too many restrictions on it, the differential equations may not have solutions (For nth-order LDE, the dimension of its solution space is $ n$, if we ask it to satisfy $ m&gt;n$ conditions, the solution may not exists). To get a unique solution, we agree to make a solution as many times differentiable as plausible and to satisfy certain <strong>initial conditions</strong>. Commonly, the initial conditions is the specification of the function and its first  $n-1$ derivatives. This sort of restrictions makes sense because of the following theorem:</p>
+<blockquote>
+<p><strong>Implicit function theorem</strong> : Let $ G:\mathbb{R}^{n+1}\to \mathbb{R}$ have continuous partial derivatives up to the k-order in some neighborhood of a point $ P_0&#x3D;(r_1,r_2,\cdots,r_{n+1})$, and there is $ \frac{\partial G}{\partial x_{n+1}}\neq 0$ . Then there is a unique function $ f:\mathbb{R}^n\to \mathbb{R}$, such that<br>$$<br>x_{n+1}&#x3D;F(x_1,x_2,\cdots,x_n)<br>$$</p>
+</blockquote>
+<p>By applying this theorem, we can derive $ \frac{\text{d}^{n}x}{\text{d}x^{n}}$ from the initial condition. In addition, we can calculate the derivatives of all orders (assuming they exist) by differentiating this equation. This allows us to expand the solution in a Taylor series and get the solution.</p>
+</li>
+</ul>
+<h2 id="Existence-Uniqueness-for-FODEs"><a href="#Existence-Uniqueness-for-FODEs" class="headerlink" title="Existence&#x2F;Uniqueness for FODEs"></a>Existence&#x2F;Uniqueness for FODEs</h2><ul>
+<li><p>The solution of FOLDE: The general form of a FOLDE is </p>
+<p>$$<br>p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y&#x3D;q(x)<br>$$</p>
+</li>
+</ul>
+<p>and it has a general solution, which can be proven by simply bring it back to the equation. We can also derive it by <strong>A method of constant variation</strong> (not mentioned in the book) from Lagrange. Firstly  we can get the general solution of the corresponding homogeneous equation of it<br>$$<br>  p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y&#x3D;0<br>$$</p>
+<p>$$<br>  \Rightarrow y&#x3D;A\exp{\left(- \int_{x_0}^{x}\frac{p_0(t)}{p_1(t)}\text{d}t\right)}<br>$$</p>
+<p>where $A$ is a constant and $ x_0$ is an arbitrary number. Now we change $ A$ to a function and believe that there is a function $ A(x)$ that can let the solution be consistent with the Non-homogeneous terms. Now we bring it back, the Leibniz rule bring a new term too us, and let it equal to $ q(x)$, i.e.<br>$$<br>  p_1(x)\frac{\text{d} A}{\text{d}x}\exp{\left(-\int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t\right)}&#x3D;q(x)<br>$$<br>Let $ \mu(x)&#x3D;\frac{1}{p_1(x)}\exp{ \int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t}$, we have<br>$$<br>  A(x)&#x3D;\int_{x_1}^{x}\mu(t)q(t)\text{d}t+C<br>$$<br>In this way, we get a general solution of FOLDE:<br>$$<br>  y(x)&#x3D;\frac{1}{p_1(x)\mu(x)}\left[ C+\int_{x_1}^x\mu(t)q(t)\text{d}t \right]<br>$$<br>where<br>$$<br>  \mu(x)&#x3D;\frac{1}{p_1(x)}\exp{\left(\int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t\right)}<br>$$</p>
+<ul>
+<li><p>Existence </p>
+<blockquote>
+<p><strong>Peano Existence Theorem</strong>: If the function $F(x,y)$ is continuous for the points on and within the rectangle defined by $|y-c|\le K$ and $|x-a|\le N$, and if $|F(x,y)|\le M$ there, then the differential equation $ y’&#x3D;F(x,y)$ has at least one solution defined for $|x − a| ≤ \min(N,K&#x2F;M)$ and satisfying the initial condition $f (a) &#x3D; c$.</p>
+</blockquote>
+</li>
+<li><p>Uniqueness</p>
+<p>Not all FODE have unique solution. A function $ F$, if we say that it satisfies <strong>Lipschitz Condition</strong> in a domain, there is a constant $ L$, for all $ x,y$ in this domain satisfy:<br>$$<br>|F(x,y_1)-F(x,y_2) |\le L|y_1-y_2|<br>$$<br>Then we can discuss the uniqueness of the solutions</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Uniqueness Theorem</strong>: A FODE $ y’&#x3D;F(x,y)$ and $ F$ satisfies Lipschitz Condition. Suppose there are two solutions $f$ and $ g$, there is<br>$$<br>|f’-g’|\le L|f-g|<br>$$<br>Notice that $ |f-g|’&#x3D;|f’-g’| $, and  both of $ f,g$  satisfy the initial condition, integrate both sides:<br>$$<br>|f(x)-g(x) |\le \text{e}^{L|x-a|}|f(a)-g(a)|&#x3D;0<br>$$<br>which means $ f&#x3D;g$.</p>
+</blockquote>
+<p>​	By combining two theorem above, an FODE that has unique solution needs to satisfy: $F$ is defined and continuous in the rectangle $|y − c| ≤ K$, $|x − a| ≤ N$ and satisfies a Lipschitz condition there. </p>
+<h2 id="General-Properties-of-SOLDEs"><a href="#General-Properties-of-SOLDEs" class="headerlink" title="General Properties of SOLDEs"></a>General Properties of SOLDEs</h2><ul>
+<li><p>The general form of SOLDEs and the definition of singular points. </p>
+<p>According to the definition of “linear”, the general form of SOLDEs is<br>$$<br>p_2(x)\frac{\text{d}^2 y}{\text{d}x^2}+p_1(x)\frac{\text{d} y}{\text{d}x}+p_0(x)y&#x3D;p_3(x)<br>$$<br>To simplify the equation, we want to divide $ p_2(x)$ from both sides, which needs $ p_2(x)\neq 0$. This means the points where $ p_2(x)$ varnishes are  special, so we define the points at which $ p_2(x)$ varnishes are called the <strong>singular points</strong> of the differential equation. One thing that’s crucial is, singular points of SOLDEs are special and essentially different from the non-linear ones.</p>
+<p>At the same time, we can define the SOLDEs that have a better property (we don’t need to worry about whether we can divide $ p_2(2)$) as <strong>regular</strong> on a interval $[a,b]$, if there is no singular point on $ [a,b]$.</p>
+</li>
+<li><p>Superposition Principle. </p>
+<p>The linear operator of a SOLDE is<br>$$<br>\hat{L}&#x3D;p_2\hat{D}^2+p_1\hat{D}+p_0<br>$$<br>the linearity of it means, for all solutions $ f,g$<br>$$<br>\hat{L}(f-g)&#x3D;\hat{L}(f)-\hat{L}(g)&#x3D;p_3-p_3&#x3D;0<br>$$<br>which shows that the difference between two solutions of a non-homogeneous SOLDE is a solution of its corresponding homogeneous SOLDE. In the same way, we can also say that any linear combination of the solutions of a homogeneous SOLDE is also a solution of it. </p>
+</li>
+<li><p>Existence&#x2F;Uniqueness</p>
+<p>We’ve noticed that the difference between two solutions of a non-homogeneous SOLDE is a solution of its corresponding homogeneous SOLDE, so if we want to claim that the solution of an SOLDE with initial conditions is unique, we need to consider the property of the solutions of an HSOLDE  with the initial condition of $ g(a)&#x3D;g(a)’&#x3D;0$. Then it comes to the lemma:</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Lemma</strong>: The only solution $g(x)$ of the homogeneous differential equation $y’’ + py’ + qy &#x3D; 0$ defined on the interval $[a,b]$ that satisfies $g(a) &#x3D; 0 &#x3D; g (a)$ is the trivial solution $g &#x3D; 0$.</p>
+<p>Proof:  Introduce an nonnegative function $ u&#x3D;g^2+g’^2$ and its derivative is:<br>$$<br>u’&#x3D;2gg’+2g’g’’&#x3D;2gg’+2g’(-pg’-qg)&#x3D;-2p(g’)^2+2(1-q)gg’<br>$$<br>With some basic inequality we have:<br>$$<br>2(1-g)gg’\le 2(1+|q|)|gg’|\le (1+|q|)(g^2+(g’)^2)<br>$$<br>then<br>$$<br>u’\le 2|p|(g’)^2+(1+|q|)(g^2+(g’)^2)&#x3D;(1+|q|)g^2+(1+|q|+2|p|)(g’)^2<br>$$<br>Let $ K&#x3D;\max { 1+|q|+2|p|}\quad \mbox{in}[a,b]$, there is $ u’\le Ku$.<br>$$<br>\Rightarrow u\le u(a)\text{e}^{K|x-a|}&#x3D;0<br>$$<br>which means $ g&#x3D;g’&#x3D;0$ for all $ x\in[a,b]$.                           </p>
+</blockquote>
+<p>Once the lemma has been proved, the uniqueness theorem becomes obvious.</p>
+<blockquote>
+<p><strong>Uniqueness Theorem of SOLDE</strong>: If  $p $ and $q$ are continuous on$ [a,b]$, then at most one solution $y &#x3D; f (x)$ of the DE $y’’ + p(x)y’ + q(x)y &#x3D; 0$ can satisfy the initial conditions $f (a) &#x3D; c_1 $and $f  (a) &#x3D; c_2$, where $c_1$ and $c_2$ are arbitrary constants.</p>
+</blockquote>
+<p>Two allowed arbitrary constants are reminding us that, the dimension of the solution space of a non-homogeneous SOLDE is $2$, i.e. if we have two “linear independent” solutions, then all solutions can be written as the linear combination of these two solutions. Now we specify what is “linear independent”. </p>
+<blockquote>
+<p><strong>Theorem</strong>: Let $f_1$ and $f_2$ be two solutions of the HSOLDE<br>$$<br>y’’+py’+qy&#x3D;q<br>$$<br>where $p$ and $q$ are continuous functions defined on the interval $[a,b]$. If$ (f_1(a),f_1’(a))$ and  $ (f_2(a),f_2’(a))$ are linearly independent vectors in $\mathbb{R}^2$, then every solution $g(x) $ of this HSOLDE is equal to some linear combination $g(x) &#x3D; c_1f_1(x) + c_2f_2(x) $.</p>
+<p>Proof: Because two vectors mentioned before is linear independent, any initial conditions is equal to the some linear combination of:<br>$$<br>\begin{bmatrix}<br>    g(a) \<br>    g’(a)<br>\end{bmatrix}&#x3D;c_1<br>\begin{bmatrix}<br>    f_1(a) \<br>    f_1’(a)<br>\end{bmatrix}+c_2<br>\begin{bmatrix}<br>    f_2(a) \<br>    f_2’(a)<br>\end{bmatrix}<br>$$<br>Let $ u&#x3D;g-c_1f_1-c_2f_2$, then use the lemma we have<br>$$<br>g&#x3D;c_1f_1+c_2f_2<br>$$</p>
+</blockquote>
+<h2 id="The-Wronskian"><a href="#The-Wronskian" class="headerlink" title="The Wronskian"></a>The Wronskian</h2><p>  The Wronskian of two differentiable functions is<br>$$<br>W(f_1,f_2,x)&#x3D;\begin{vmatrix}<br>f_1 &amp; f_1’ \<br>f_2 &amp; f_2’<br>\end{vmatrix}<br>$$<br>In the finite dimensional vector space, the determinant of a matrix shows the linear dependency of its row vectors, so the Wronskian may have something to do with the linear dependency of these two functions. </p>
+<blockquote>
+<p><strong>Theorem</strong>: Two differentiable functions $f_1$ and $f_2$, which are nonzero in the interval $[a,b]$, are linearly dependent if and only if their Wronskian vanishes.</p>
+<p>Proof: we have<br>$$<br>f_1f_2’-f_2f_1’&#x3D;0<br>$$<br>Because $ f_1,f_2$ is nonzero, we have<br>$$<br>\left(\frac{f_2}{f_1}\right)’&#x3D;\frac{f_1f_2’-f_2f_1’}{f_1^2}&#x3D;0<br>$$<br>so $ f_1&#x3D;Cf_2$. where $C$ is a constant. </p>
+</blockquote>
+<p>Then consider two solutions’ Wronskian. All we know is about the 2-order derivative of two functions, so we take the derivative of $W$:<br>$$<br>\frac{\text{d}W}{\text{d}x}&#x3D;f_1f_2’’-f_2f_1’’&#x3D;-p(f_1f_2’-f_2f_1’)&#x3D;-pW<br>$$</p>
+<p>$$<br>\Rightarrow W&#x3D;W(f_1,f_2,c)\text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
+<p>It’s an important proposition. </p>
+<h3 id="A-Second-Solution-to-the-HSOLDE"><a href="#A-Second-Solution-to-the-HSOLDE" class="headerlink" title="A Second Solution to the HSOLDE"></a>A Second Solution to the HSOLDE</h3><p>If we’ve already known a solution of a HSOLDE, then we can use the Wronskian to calculate the another:<br>$$<br>f_1f_2’-f_2f_1’&#x3D;W(c)\text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
+<p>$$<br>\Rightarrow \left(\frac{f_2}{f_1}\right)’&#x3D; \frac{C}{f_1^2} \text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
+<p>The result is<br>$$<br>f_2(x)&#x3D;f_1(x)\left[ C+K\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t \right)} \text{ds} \right]<br>$$</p>
+<blockquote>
+<p><strong>Theorem</strong>: Let $f_1$ be a solution of $ y’’+py’+qy&#x3D;0$, then<br>$$<br>f_2(x)&#x3D;f_1(x)\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t \right)} \text{ds}<br>$$<br>is another solution linearly independent with $f_1(x)$.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example</strong>: Legendre DE:<br>$$<br>\frac{\text{d}}{\text{d}x}(1-x^2)\frac{\text{d}y}{\text{d}x}+n(n+1)y&#x3D;0<br>$$<br>from which we have $ p(x)&#x3D;-\frac{2x}{1-x^2}$. One solution of this HSOLDE is the well-known Legendre polynomial $P_n(x)$. Another solution $Q_n$ is<br>$$<br>\begin{aligned}<br>Q_n(x)&amp;&#x3D;P_n(x)\int_{x_0}^x\frac{1}{P_n^2(s)}\exp\left(-\int_0^sp(t)\text{d}t\right)\text{d}s \<br>&amp;&#x3D;P_n(x)\int_{x_0}^x \frac{\text{d}s}{P_n^2(s)(1-s^2)}<br>\end{aligned}<br>$$<br>For example:<br>$$<br>Q_0&#x3D;\int_{x_0}^x\frac{\text{d}s}{1-s^2}&#x3D;\frac{1}{2}\ln\bigg|\frac{1+x}{1-x}\bigg|<br>$$</p>
+<p>$$<br>Q_1&#x3D;x\int_{x_0}^x\frac{\text{d}s}{s^2(1-s^2)}&#x3D;\frac{1}{2}x\ln\bigg|\frac{1+x}{1-x}\bigg|<br>$$</p>
+</blockquote>
+<h3 id="General-Solution-to-an-ISOLDE"><a href="#General-Solution-to-an-ISOLDE" class="headerlink" title="General Solution to an ISOLDE"></a>General Solution to an ISOLDE</h3><ul>
+<li><p>General solution to an ISOLDE</p>
+<p>We’ve finished the discussion about HSOLDE and know that the general solutions are linear combinations of two linear independent solutions. Then if we have a <strong>particular</strong> solution $ g(x)$to an ISOLDE, according to the properties of SOLDE, any solution of it can be expressed by the following form:</p>
+</li>
+</ul>
+<p>$$<br>h(x)&#x3D;c_1f_1(x)+c_2f_2(x)+g(x)<br>$$</p>
+<ul>
+<li><p>The method of variation of constants</p>
+<p>Let $ f_1$ and $ f_2$ be the two known solutions of the HSOLDE and $ g(x)$ is the linear combination of them. Suppose $ g&#x3D;v(x)f_1(x)$, bring it back:<br>$$<br>v’’+\left(p+\frac{2f’}{f}\right)v’&#x3D;\frac{r}{f_1}<br>$$<br>Its a FOLDE of $ v’$, the solution can be easily written down:<br>$$<br>v’&#x3D;\frac{W(x)}{f_1^2(x)}\left[C+\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t \right]<br>$$<br>where we’ve already used $ \exp{\int p\text{d}x}&#x3D;\frac{W(c)}{W(x)}$. Let $C&#x3D;0$.<br>$$<br>\Rightarrow v’&#x3D;\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t\cdot\frac{\text{d}}{\text{d}x}\frac{f_2}{f_1}&#x3D;\frac{\text{d}}{\text{d}x}\left[\frac{f_2}{f_1} \int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t\right]-\frac{f_2}{f_1}\frac{f_1(x) r(x)}{W(x)}<br>$$</p>
+<p>$$<br>\Rightarrow v&#x3D;\frac{f_2}{f_1}\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x \frac{f_2(t)r(t)}{W(t)}\text{d}t<br>$$</p>
+<p>By doing so, we get a particular solution, which allow us to express the solutions of a ISOLDE by two homogeneous solutions:<br>$$<br>y(x)&#x3D;c_1f_1(x)+c_2 f_2(x )+\frac{f_2}{f_1}\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x \frac{f_2(t)r(t)}{W(t)}\text{d}t<br>$$</p>
+</li>
+</ul>
+<h3 id="Separation-and-Comparison-Theorems"><a href="#Separation-and-Comparison-Theorems" class="headerlink" title="Separation and Comparison Theorems"></a>Separation and Comparison Theorems</h3><blockquote>
+<p><strong>Separation Theorem</strong>: The zeros of two linearly independent solutions of an HSOLDE occur alternately </p>
+<p>Proof: Suppose $ x_i$ is a zero of $ f_2$, then<br>$$<br>0\neq W(f_1,f_2,x_i)&#x3D;f_1(x_i)f_2’(x_i)<br>$$</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/11/09/About-My-Blog/" rel="prev" title="About My Blog">
+      <i class="fa fa-chevron-left"></i> About My Blog
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Forms-and-Properties"><span class="nav-number">1.</span> <span class="nav-text">General Forms and Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Existence-Uniqueness-for-FODEs"><span class="nav-number">2.</span> <span class="nav-text">Existence&#x2F;Uniqueness for FODEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Properties-of-SOLDEs"><span class="nav-number">3.</span> <span class="nav-text">General Properties of SOLDEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Wronskian"><span class="nav-number">4.</span> <span class="nav-text">The Wronskian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Second-Solution-to-the-HSOLDE"><span class="nav-number">4.1.</span> <span class="nav-text">A Second Solution to the HSOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Solution-to-an-ISOLDE"><span class="nav-number">4.2.</span> <span class="nav-text">General Solution to an ISOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Separation-and-Comparison-Theorems"><span class="nav-number">4.3.</span> <span class="nav-text">Separation and Comparison Theorems</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KunziBa"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">KunziBa</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KunziBa</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,0' opacity='1' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
