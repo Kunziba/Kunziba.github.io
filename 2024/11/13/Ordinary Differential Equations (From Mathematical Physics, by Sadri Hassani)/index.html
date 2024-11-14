@@ -28,7 +28,7 @@
 <meta property="og:description" content="Basic knowledge of ODE (Building...)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-13T15:35:00.000Z">
-<meta property="article:modified_time" content="2024-11-13T15:54:09.454Z">
+<meta property="article:modified_time" content="2024-11-14T03:37:31.129Z">
 <meta property="article:author" content="KunziBa">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="笔记">
@@ -180,10 +180,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-11-13 23:35:00 / 修改时间：23:54:09" itemprop="dateCreated datePublished" datetime="2024-11-13T23:35:00+08:00">2024-11-13</time>
+              <time title="创建时间：2024-11-13 23:35:00" itemprop="dateCreated datePublished" datetime="2024-11-13T23:35:00+08:00">2024-11-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-14 11:37:31" itemprop="dateModified" datetime="2024-11-14T11:37:31+08:00">2024-11-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,7 +235,7 @@ y}{\text{d}x^n}=q(x)
 \]</span> LDE can be written as <span class="math display">\[
 \hat{L}{y}=q(x)
 \]</span> And the equation is said to be <strong>homogeneous</strong>
-when $ q(x)=0$.</p></li>
+when <span class="math inline">\(q(x)=0\)</span>.</p></li>
 <li><p>Solutions: A solution of a differential equation is a
 single-variable function such that $ G(x,f,f',,f^{n}=0)$, for all $ x$
 in the domain of definition of $ f$ . If we put too many restrictions on
@@ -243,16 +249,23 @@ specification of the function and its first <span
 class="math inline">\(n-1\)</span> derivatives. This sort of
 restrictions makes sense because of the following theorem:</p>
 <blockquote>
-<p><strong>Implicit function theorem</strong> : Let $ G:^{n+1}$ have
+<p><strong>Implicit function theorem</strong> : Let <span
+class="math inline">\(G:\mathbb{R}^{n+1}\to\mathbb{R}\)</span> have
 continuous partial derivatives up to the k-order in some neighborhood of
-a point $ P_0=(r_1,r_2,,r_{n+1})$, and there is $ $ . Then there is a
-unique function $ f:^n<span class="math inline">\(, such that\)</span>$
-x_{n+1}=F(x_1,x_2,,x_n) $$</p>
+a point $ P_0=(r_1,r_2,,r_{n+1})$, and there is <span
+class="math inline">\(\frac{\partial G}{\partial x_{n+1}}\neq0\)</span>
+. Then there is a unique function <span
+class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>, such that
+<span class="math display">\[
+x_{n+1}=F(x_1,x_2,\cdots,x_n)
+\]</span></p>
 </blockquote>
-<p>By applying this theorem, we can derive $ $ from the initial
-condition. In addition, we can calculate the derivatives of all orders
-(assuming they exist) by differentiating this equation. This allows us
-to expand the solution in a Taylor series and get the solution.</p></li>
+<p>By applying this theorem, we can derive <span
+class="math inline">\(\frac{\text{d}^{n}x}{\text{d}x^{n}}\)</span> from
+the initial condition. In addition, we can calculate the derivatives of
+all orders (assuming they exist) by differentiating this equation. This
+allows us to expand the solution in a Taylor series and get the
+solution.</p></li>
 </ul>
 <h2 id="existenceuniqueness-for-fodes">Existence/Uniqueness for
 FODEs</h2>
@@ -280,7 +293,7 @@ with the Non-homogeneous terms. Now we bring it back, the Leibniz rule
 bring a new term too us, and let it equal to $ q(x)<span
 class="math inline">\(, i.e.\)</span>$ p_1(x)=q(x) <span
 class="math display">\[
-Let $ \mu(x)=\frac{1}{p_1(x)}\exp{ \int_{x_0}^x
+Let $\mu(x)=\frac{1}{p_1(x)}\exp{ \int_{x_0}^x
 \frac{p_0(t)}{p_1(t)}\text{d}t}$, we have
 \]</span> A(x)=_{x_1}^{x}(t)q(t)t+C <span class="math display">\[
 In this way, we get a general solution of FOLDE:
@@ -295,10 +308,10 @@ class="math inline">\(F(x,y)\)</span> is continuous for the points on
 and within the rectangle defined by <span class="math inline">\(|y-c|\le
 K\)</span> and <span class="math inline">\(|x-a|\le N\)</span>, and if
 <span class="math inline">\(|F(x,y)|\le M\)</span> there, then the
-differential equation $ y'=F(x,y)$ has at least one solution defined for
-<span class="math inline">\(|x − a| ≤ \min(N,K/M)\)</span> and
-satisfying the initial condition <span class="math inline">\(f (a) =
-c\)</span>.</p>
+differential equation <span class="math inline">\(y&#39;=F(x,y)\)</span>
+has at least one solution defined for <span class="math inline">\(|x −
+a| ≤ \min(N,K/M)\)</span> and satisfying the initial condition <span
+class="math inline">\(f(a)=c\)</span>.</p>
 </blockquote></li>
 <li><p>Uniqueness</p>
 <p>Not all FODE have unique solution. A function $ F$, if we say that it
@@ -309,13 +322,15 @@ class="math display">\[
 \]</span> Then we can discuss the uniqueness of the solutions</p></li>
 </ul>
 <blockquote>
-<p><strong>Uniqueness Theorem</strong>: A FODE $ y'=F(x,y)$ and $ F$
-satisfies Lipschitz Condition. Suppose there are two solutions <span
+<p><strong>Uniqueness Theorem</strong>: A FODE <span
+class="math inline">\(y&#39;=F(x,y)\)</span> and $ F$ satisfies
+Lipschitz Condition. Suppose there are two solutions <span
 class="math inline">\(f\)</span> and $ g<span class="math inline">\(,
 there is\)</span>$ |f'-g'|L|f-g| <span class="math display">\[
-Notice that $ |f-g|&#39;=|f&#39;-g&#39;| $, and  both of $ f,g$  satisfy
+Notice that $|f-g|&#39;=|f&#39;-g&#39;|$, and  both of $f,g$  satisfy
 the initial condition, integrate both sides:
-\]</span> |f(x)-g(x) |^{L|x-a|}|f(a)-g(a)|=0 $$ which means $ f=g$.</p>
+\]</span> |f(x)-g(x) |^{L|x-a|}|f(a)-g(a)|=0 $$ which means <span
+class="math inline">\(f=g\)</span>.</p>
 </blockquote>
 <p>​ By combining two theorem above, an FODE that has unique solution
 needs to satisfy: <span class="math inline">\(F\)</span> is defined and
@@ -330,23 +345,25 @@ points.</p>
 is <span class="math display">\[
 p_2(x)\frac{\text{d}^2 y}{\text{d}x^2}+p_1(x)\frac{\text{d}
 y}{\text{d}x}+p_0(x)y=p_3(x)
-\]</span> To simplify the equation, we want to divide $ p_2(x)$ from
-both sides, which needs $ p_2(x)$. This means the points where $ p_2(x)$
-varnishes are special, so we define the points at which $ p_2(x)$
+\]</span> To simplify the equation, we want to divide <span
+class="math inline">\(p_2(x)\)</span> from both sides, which needs <span
+class="math inline">\(p_2(x)\neq 0\)</span>. This means the points where
+<span class="math inline">\(p_2(x)\)</span> varnishes are special, so we
+define the points at which <span class="math inline">\(p_2(x)\)</span>
 varnishes are called the <strong>singular points</strong> of the
 differential equation. One thing that's crucial is, singular points of
 SOLDEs are special and essentially different from the non-linear
 ones.</p>
 <p>At the same time, we can define the SOLDEs that have a better
-property (we don't need to worry about whether we can divide $ p_2(2)$)
-as <strong>regular</strong> on a interval <span
-class="math inline">\([a,b]\)</span>, if there is no singular point on $
-[a,b]$.</p></li>
+property (we don't need to worry about whether we can divide <span
+class="math inline">\(p_2(2)\)</span> as <strong>regular</strong> on a
+interval <span class="math inline">\([a,b]\)</span>, if there is no
+singular point on <span class="math inline">\([a,b]\)</span>.</p></li>
 <li><p>Superposition Principle.</p>
 <p>The linear operator of a SOLDE is <span class="math display">\[
 \hat{L}=p_2\hat{D}^2+p_1\hat{D}+p_0
-\]</span> the linearity of it means, for all solutions $ f,g$ <span
-class="math display">\[
+\]</span> the linearity of it means, for all solutions <span
+class="math inline">\(f,g\)</span> <span class="math display">\[
 \hat{L}(f-g)=\hat{L}(f)-\hat{L}(g)=p_3-p_3=0
 \]</span> which shows that the difference between two solutions of a
 non-homogeneous SOLDE is a solution of its corresponding homogeneous
@@ -357,8 +374,9 @@ the solutions of a homogeneous SOLDE is also a solution of it.</p></li>
 non-homogeneous SOLDE is a solution of its corresponding homogeneous
 SOLDE, so if we want to claim that the solution of an SOLDE with initial
 conditions is unique, we need to consider the property of the solutions
-of an HSOLDE with the initial condition of $ g(a)=g(a)'=0$. Then it
-comes to the lemma:</p></li>
+of an HSOLDE with the initial condition of <span
+class="math inline">\(g(a)=g(a)&#39;=0\)</span>. Then it comes to the
+lemma:</p></li>
 </ul>
 <blockquote>
 <p><strong>Lemma</strong>: The only solution <span
@@ -368,8 +386,9 @@ equation <span class="math inline">\(y&#39;&#39; + py&#39; + qy =
 class="math inline">\([a,b]\)</span> that satisfies <span
 class="math inline">\(g(a) = 0 = g (a)\)</span> is the trivial solution
 <span class="math inline">\(g = 0\)</span>.</p>
-<p>Proof: Introduce an nonnegative function $ u=g<sup>2+g'</sup>2$ and
-its derivative is: <span class="math display">\[
+<p>Proof: Introduce an nonnegative function <span
+class="math inline">\(u=g^2+g&#39;^2\)</span> and its derivative is:
+<span class="math display">\[
 u&#39;=2gg&#39;+2g&#39;g&#39;&#39;=2gg&#39;+2g&#39;(-pg&#39;-qg)=-2p(g&#39;)^2+2(1-q)gg&#39;
 \]</span> With some basic inequality we have: <span
 class="math display">\[
@@ -377,20 +396,25 @@ class="math display">\[
 \]</span> then <span class="math display">\[
 u&#39;\le
 2|p|(g&#39;)^2+(1+|q|)(g^2+(g&#39;)^2)=(1+|q|)g^2+(1+|q|+2|p|)(g&#39;)^2
-\]</span> Let $ K={ 1+|q|+2|p|}[a,b]$, there is $ u'Ku<span
-class="math inline">\(.\)</span>$ uu(a)^{K|x-a|}=0 $$ which means $
-g=g'=0$ for all $ x$.</p>
+\]</span> Let <span class="math inline">\(K=\max\{ 1+|q|+2|p|\}\quad
+\mbox{in}[a,b]\)</span>, there is <span class="math inline">\(u&#39;\le
+Ku\)</span>. <span class="math display">\[
+\Rightarrow u\le u(a)\text{e}^{K|x-a|}=0
+\]</span> which means <span class="math inline">\(g=g&#39;=0\)</span>
+for all <span class="math inline">\(x\in[a,b]\)</span>.</p>
 </blockquote>
 <p>Once the lemma has been proved, the uniqueness theorem becomes
 obvious.</p>
 <blockquote>
-<p><strong>Uniqueness Theorem of SOLDE</strong>: If $p $ and <span
-class="math inline">\(q\)</span> are continuous on$ [a,b]$, then at most
-one solution <span class="math inline">\(y = f (x)\)</span> of the DE
-<span class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y =
-0\)</span> can satisfy the initial conditions $f (a) = c_1 $and <span
-class="math inline">\(f  (a) = c_2\)</span>, where <span
-class="math inline">\(c_1\)</span> and <span
+<p><strong>Uniqueness Theorem of SOLDE</strong>: If <span
+class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> are continuous on<span
+class="math inline">\([a,b]\)</span>, then at most one solution <span
+class="math inline">\(y = f (x)\)</span> of the DE <span
+class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y = 0\)</span> can
+satisfy the initial conditions <span class="math inline">\(f (a) =
+c_1\)</span>and <span class="math inline">\(f  (a) = c_2\)</span>, where
+<span class="math inline">\(c_1\)</span> and <span
 class="math inline">\(c_2\)</span> are arbitrary constants.</p>
 </blockquote>
 <p>Two allowed arbitrary constants are reminding us that, the dimension
@@ -407,11 +431,14 @@ class="math display">\[
 y&#39;&#39;+py&#39;+qy=q
 \]</span> where <span class="math inline">\(p\)</span> and <span
 class="math inline">\(q\)</span> are continuous functions defined on the
-interval <span class="math inline">\([a,b]\)</span>. If$
-(f_1(a),f_1'(a))$ and $ (f_2(a),f_2'(a))$ are linearly independent
-vectors in <span class="math inline">\(\mathbb{R}^2\)</span>, then every
-solution $g(x) $ of this HSOLDE is equal to some linear combination
-$g(x) = c_1f_1(x) + c_2f_2(x) $.</p>
+interval <span class="math inline">\([a,b]\)</span>. If <span
+class="math inline">\((f_1(a),f_1&#39;(a))\)</span> and <span
+class="math inline">\((f_2(a),f_2&#39;(a))\)</span> are linearly
+independent vectors in <span
+class="math inline">\(\mathbb{R}^2\)</span>, then every solution <span
+class="math inline">\(g(x)\)</span> of this HSOLDE is equal to some
+linear combination <span class="math inline">\(g(x) = c_1f_1(x) +
+c_2f_2(x)\)</span>.</p>
 <p>Proof: Because two vectors mentioned before is linear independent,
 any initial conditions is equal to the some linear combination of: <span
 class="math display">\[
@@ -427,8 +454,10 @@ class="math display">\[
   f_2(a) \\
   f_2&#39;(a)
 \end{bmatrix}
-\]</span> Let $ u=g-c_1f_1-c_2f_2<span class="math inline">\(, then use
-the lemma we have\)</span>$ g=c_1f_1+c_2f_2 $$</p>
+\]</span> Let <span class="math inline">\(u=g-c_1f_1-c_2f_2\)</span> ,
+then use the lemma we have <span class="math display">\[
+g=c_1f_1+c_2f_2
+\]</span></p>
 </blockquote>
 <h2 id="the-wronskian">The Wronskian</h2>
 <p>The Wronskian of two differentiable functions is <span
@@ -449,11 +478,11 @@ class="math inline">\(f_2\)</span>, which are nonzero in the interval
 and only if their Wronskian vanishes.</p>
 <p>Proof: we have <span class="math display">\[
 f_1f_2&#39;-f_2f_1&#39;=0
-\]</span> Because $ f_1,f_2$ is nonzero, we have <span
-class="math display">\[
+\]</span> Because <span class="math inline">\(f_1,f_2\)</span> are
+nonzero, we have <span class="math display">\[
 \left(\frac{f_2}{f_1}\right)&#39;=\frac{f_1f_2&#39;-f_2f_1&#39;}{f_1^2}=0
-\]</span> so $ f_1=Cf_2$. where <span class="math inline">\(C\)</span>
-is a constant.</p>
+\]</span> so <span class="math inline">\(f_1=Cf_2\)</span>. where <span
+class="math inline">\(C\)</span> is a constant.</p>
 </blockquote>
 <p>Then consider two solutions' Wronskian. All we know is about the
 2-order derivative of two functions, so we take the derivative of <span
@@ -481,16 +510,20 @@ C+K\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t
 \]</span></p>
 <blockquote>
 <p><strong>Theorem</strong>: Let <span
-class="math inline">\(f_1\)</span> be a solution of $ y''+py'+qy=0<span
-class="math inline">\(, then\)</span>$ f_2(x)=f_1(x)_{x_0}^x $$ is
-another solution linearly independent with <span
+class="math inline">\(f_1\)</span> be a solution of <span
+class="math inline">\(y&#39;&#39;+py&#39;+qy=0\)</span>, then <span
+class="math display">\[
+f_2(x)=f_1(x)\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t
+\right)} \text{ds}
+\]</span> is another solution linearly independent with <span
 class="math inline">\(f_1(x)\)</span>.</p>
 </blockquote>
 <blockquote>
 <p><strong>Example</strong>: Legendre DE: <span class="math display">\[
 \frac{\text{d}}{\text{d}x}(1-x^2)\frac{\text{d}y}{\text{d}x}+n(n+1)y=0
-\]</span> from which we have $ p(x)=-$. One solution of this HSOLDE is
-the well-known Legendre polynomial <span
+\]</span> from which we have <span
+class="math inline">\(p(x)=-\frac{2x}{1-x^2}\)</span>. One solution of
+this HSOLDE is the well-known Legendre polynomial <span
 class="math inline">\(P_n(x)\)</span>. Another solution <span
 class="math inline">\(Q_n\)</span> is <span class="math display">\[
 \begin{aligned}
@@ -511,24 +544,36 @@ ISOLDE</h3>
 <li><p>General solution to an ISOLDE</p>
 <p>We've finished the discussion about HSOLDE and know that the general
 solutions are linear combinations of two linear independent solutions.
-Then if we have a <strong>particular</strong> solution $ g(x)$to an
-ISOLDE, according to the properties of SOLDE, any solution of it can be
-expressed by the following form:</p></li>
+Then if we have a <strong>particular</strong> solution <span
+class="math inline">\(g(x)\)</span>to an ISOLDE, according to the
+properties of SOLDE, any solution of it can be expressed by the
+following form:</p></li>
 </ul>
 <p><span class="math display">\[
 h(x)=c_1f_1(x)+c_2f_2(x)+g(x)
 \]</span></p>
 <ul>
 <li><p>The method of variation of constants</p>
-<p>Let $ f_1$ and $ f_2$ be the two known solutions of the HSOLDE and $
-g(x)$ is the linear combination of them. Suppose $ g=v(x)f_1(x)<span
-class="math inline">\(, bring it back:\)</span>$ v''+(p+)v'= <span
+<p>Let <span class="math inline">\(f_1\)</span> and <span
+class="math inline">\(f_2\)</span> be the two known solutions of the
+HSOLDE and <span class="math inline">\(g(x)\)</span> is the linear
+combination of them. Suppose <span
+class="math inline">\(g=v(x)f_1(x)\)</span>, bring it back: <span
 class="math display">\[
-Its a FOLDE of $ v&#39;$, the solution can be easily written down:
-\]</span> v'=<span class="math display">\[
-where we&#39;ve already used $ \exp{\int p\text{d}x}=\frac{W(c)}{W(x)}$.
-Let $C=0$.
-\]</span> v'=_a^x t=- $$</p>
+v&#39;&#39;+\left(p+\frac{2f&#39;}{f}\right)v&#39;=\frac{r}{f_1}
+\]</span> Its a FOLDE of <span class="math inline">\(v&#39;\)</span>,
+the solution can be easily written down: <span class="math display">\[
+v&#39;=\frac{W(x)}{f_1^2(x)}\left[C+\int_a^x
+\frac{f_1(t)r(t)}{W(t)}\text{d}t \right]
+\]</span> where we've already used <span class="math inline">\(\exp{\int
+p\text{d}x}=\frac{W(c)}{W(x)}\)</span>. Let <span
+class="math inline">\(C=0\)</span>. <span class="math display">\[
+\Rightarrow v&#39;=\int_a^x
+\frac{f_1(t)r(t)}{W(t)}\text{d}t\cdot\frac{\text{d}}{\text{d}x}\frac{f_2}{f_1}=\frac{\text{d}}{\text{d}x}\left[\frac{f_2}{f_1}
+\int_a^x
+\frac{f_1(t)r(t)}{W(t)}\text{d}t\right]-\frac{f_2}{f_1}\frac{f_1(x)
+r(x)}{W(x)}
+\]</span></p>
 <p><span class="math display">\[
 \Rightarrow v=\frac{f_2}{f_1}\int_a^x
 \frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x
@@ -546,9 +591,12 @@ y(x)=c_1f_1(x)+c_2 f_2(x )+\frac{f_2}{f_1}\int_a^x
 Theorems</h3>
 <blockquote>
 <p><strong>Separation Theorem</strong>: The zeros of two linearly
-independent solutions of an HSOLDE occur alternately</p>
-<p>Proof: Suppose $ x_i$ is a zero of $ f_2<span class="math inline">\(,
-then\)</span>$ 0W(f_1,f_2,x_i)=f_1(x_i)f_2'(x_i) $$</p>
+independent solutions of an HSOLDE occur alternately.</p>
+<p>Proof: Suppose <span class="math inline">\(x_i\)</span> is a zero of
+<span class="math inline">\(f_2\)</span>, then <span
+class="math display">\[
+0\neq W(f_1,f_2,x_i)=f_1(x_i)f_2&#39;(x_i)
+\]</span></p>
 </blockquote>
 
     </div>
