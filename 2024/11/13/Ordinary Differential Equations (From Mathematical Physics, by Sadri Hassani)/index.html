@@ -28,7 +28,7 @@
 <meta property="og:description" content="Basic knowledge of ODE (Building...)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-13T15:35:00.000Z">
-<meta property="article:modified_time" content="2024-11-13T15:41:49.755Z">
+<meta property="article:modified_time" content="2024-11-13T15:54:09.454Z">
 <meta property="article:author" content="KunziBa">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="笔记">
@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-11-13 23:35:00 / 修改时间：23:41:49" itemprop="dateCreated datePublished" datetime="2024-11-13T23:35:00+08:00">2024-11-13</time>
+              <time title="创建时间：2024-11-13 23:35:00 / 修改时间：23:54:09" itemprop="dateCreated datePublished" datetime="2024-11-13T23:35:00+08:00">2024-11-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,101 +206,349 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>The main structure and methods were from the book, and I added some personal ideas and detailed process that may be of help to better understand the book. </p>
-<h2 id="General-Forms-and-Properties"><a href="#General-Forms-and-Properties" class="headerlink" title="General Forms and Properties"></a>General Forms and Properties</h2><ul>
-<li><p>The general form of an n-order differential equation is:<br>$$<br>G(x,y,y’,\cdots,y^{(n)})&#x3D;0<br>$$</p>
-</li>
-<li><p>Linearity and homogeneity</p>
-<p>When we say a differential equation is <strong>linear</strong>, it’s linear to $ y$ and its derivatives, i.e.<br>$$<br>\frac{\partial^2 G}{\partial (y^{(k)})^2}&#x3D;0\quad \mbox{for} \quad k&#x3D;0,1,\cdots,n<br>$$<br>or if we can write $ G$ as a explicit function, linearity means:<br>$$<br>p_0(x)y+p_1(x)\frac{\text{d}y}{\text{d}x}+\cdots+p_n (x)\frac{\text{d}^n y}{\text{d}x^n}&#x3D;q(x)<br>$$<br>Let linear operator<br>$$<br>\hat{L}&#x3D;p_0+p_1\hat{D}+\cdots+p_n \hat{D}^n<br>$$<br>LDE can be written as<br>$$<br>\hat{L}{y}&#x3D;q(x)<br>$$<br>And the equation is said to be <strong>homogeneous</strong> when $ q(x)&#x3D;0$.</p>
-</li>
-<li><p>Solutions: A solution of a differential equation is a single-variable function such that $ G(x,f,f’,\cdots,f^{n}&#x3D;0)$, for all $ x$ in the domain of definition of $ f$ . If we put too many restrictions on it, the differential equations may not have solutions (For nth-order LDE, the dimension of its solution space is $ n$, if we ask it to satisfy $ m&gt;n$ conditions, the solution may not exists). To get a unique solution, we agree to make a solution as many times differentiable as plausible and to satisfy certain <strong>initial conditions</strong>. Commonly, the initial conditions is the specification of the function and its first  $n-1$ derivatives. This sort of restrictions makes sense because of the following theorem:</p>
-<blockquote>
-<p><strong>Implicit function theorem</strong> : Let $ G:\mathbb{R}^{n+1}\to \mathbb{R}$ have continuous partial derivatives up to the k-order in some neighborhood of a point $ P_0&#x3D;(r_1,r_2,\cdots,r_{n+1})$, and there is $ \frac{\partial G}{\partial x_{n+1}}\neq 0$ . Then there is a unique function $ f:\mathbb{R}^n\to \mathbb{R}$, such that<br>$$<br>x_{n+1}&#x3D;F(x_1,x_2,\cdots,x_n)<br>$$</p>
-</blockquote>
-<p>By applying this theorem, we can derive $ \frac{\text{d}^{n}x}{\text{d}x^{n}}$ from the initial condition. In addition, we can calculate the derivatives of all orders (assuming they exist) by differentiating this equation. This allows us to expand the solution in a Taylor series and get the solution.</p>
-</li>
-</ul>
-<h2 id="Existence-Uniqueness-for-FODEs"><a href="#Existence-Uniqueness-for-FODEs" class="headerlink" title="Existence&#x2F;Uniqueness for FODEs"></a>Existence&#x2F;Uniqueness for FODEs</h2><ul>
-<li><p>The solution of FOLDE: The general form of a FOLDE is </p>
-<p>$$<br>p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y&#x3D;q(x)<br>$$</p>
-</li>
-</ul>
-<p>and it has a general solution, which can be proven by simply bring it back to the equation. We can also derive it by <strong>A method of constant variation</strong> (not mentioned in the book) from Lagrange. Firstly  we can get the general solution of the corresponding homogeneous equation of it<br>$$<br>  p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y&#x3D;0<br>$$</p>
-<p>$$<br>  \Rightarrow y&#x3D;A\exp{\left(- \int_{x_0}^{x}\frac{p_0(t)}{p_1(t)}\text{d}t\right)}<br>$$</p>
-<p>where $A$ is a constant and $ x_0$ is an arbitrary number. Now we change $ A$ to a function and believe that there is a function $ A(x)$ that can let the solution be consistent with the Non-homogeneous terms. Now we bring it back, the Leibniz rule bring a new term too us, and let it equal to $ q(x)$, i.e.<br>$$<br>  p_1(x)\frac{\text{d} A}{\text{d}x}\exp{\left(-\int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t\right)}&#x3D;q(x)<br>$$<br>Let $ \mu(x)&#x3D;\frac{1}{p_1(x)}\exp{ \int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t}$, we have<br>$$<br>  A(x)&#x3D;\int_{x_1}^{x}\mu(t)q(t)\text{d}t+C<br>$$<br>In this way, we get a general solution of FOLDE:<br>$$<br>  y(x)&#x3D;\frac{1}{p_1(x)\mu(x)}\left[ C+\int_{x_1}^x\mu(t)q(t)\text{d}t \right]<br>$$<br>where<br>$$<br>  \mu(x)&#x3D;\frac{1}{p_1(x)}\exp{\left(\int_{x_0}^x \frac{p_0(t)}{p_1(t)}\text{d}t\right)}<br>$$</p>
+        <p>The main structure and methods were from the book, and I added some
+personal ideas and detailed process that may be of help to better
+understand the book.</p>
+<h2 id="general-forms-and-properties">General Forms and Properties</h2>
 <ul>
-<li><p>Existence </p>
+<li><p>The general form of an n-order differential equation is: <span
+class="math display">\[
+G(x,y,y&#39;,\cdots,y^{(n)})=0
+\]</span></p></li>
+<li><p>Linearity and homogeneity</p>
+<p>When we say a differential equation is <strong>linear</strong>, it's
+linear to $ y$ and its derivatives, i.e. <span class="math display">\[
+\frac{\partial^2 G}{\partial (y^{(k)})^2}=0\quad \mbox{for} \quad
+k=0,1,\cdots,n
+\]</span> or if we can write $ G$ as a explicit function, linearity
+means: <span class="math display">\[
+p_0(x)y+p_1(x)\frac{\text{d}y}{\text{d}x}+\cdots+p_n (x)\frac{\text{d}^n
+y}{\text{d}x^n}=q(x)
+\]</span> Let linear operator <span class="math display">\[
+\hat{L}=p_0+p_1\hat{D}+\cdots+p_n \hat{D}^n
+\]</span> LDE can be written as <span class="math display">\[
+\hat{L}{y}=q(x)
+\]</span> And the equation is said to be <strong>homogeneous</strong>
+when $ q(x)=0$.</p></li>
+<li><p>Solutions: A solution of a differential equation is a
+single-variable function such that $ G(x,f,f',,f^{n}=0)$, for all $ x$
+in the domain of definition of $ f$ . If we put too many restrictions on
+it, the differential equations may not have solutions (For nth-order
+LDE, the dimension of its solution space is $ n$, if we ask it to
+satisfy $ m&gt;n$ conditions, the solution may not exists). To get a
+unique solution, we agree to make a solution as many times
+differentiable as plausible and to satisfy certain <strong>initial
+conditions</strong>. Commonly, the initial conditions is the
+specification of the function and its first <span
+class="math inline">\(n-1\)</span> derivatives. This sort of
+restrictions makes sense because of the following theorem:</p>
 <blockquote>
-<p><strong>Peano Existence Theorem</strong>: If the function $F(x,y)$ is continuous for the points on and within the rectangle defined by $|y-c|\le K$ and $|x-a|\le N$, and if $|F(x,y)|\le M$ there, then the differential equation $ y’&#x3D;F(x,y)$ has at least one solution defined for $|x − a| ≤ \min(N,K&#x2F;M)$ and satisfying the initial condition $f (a) &#x3D; c$.</p>
+<p><strong>Implicit function theorem</strong> : Let $ G:^{n+1}$ have
+continuous partial derivatives up to the k-order in some neighborhood of
+a point $ P_0=(r_1,r_2,,r_{n+1})$, and there is $ $ . Then there is a
+unique function $ f:^n<span class="math inline">\(, such that\)</span>$
+x_{n+1}=F(x_1,x_2,,x_n) $$</p>
 </blockquote>
-</li>
+<p>By applying this theorem, we can derive $ $ from the initial
+condition. In addition, we can calculate the derivatives of all orders
+(assuming they exist) by differentiating this equation. This allows us
+to expand the solution in a Taylor series and get the solution.</p></li>
+</ul>
+<h2 id="existenceuniqueness-for-fodes">Existence/Uniqueness for
+FODEs</h2>
+<ul>
+<li><p>The solution of FOLDE: The general form of a FOLDE is</p>
+<p><span class="math display">\[
+p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y=q(x)
+\]</span></p></li>
+</ul>
+<p>and it has a general solution, which can be proven by simply bring it
+back to the equation. We can also derive it by <strong>A method of
+constant variation</strong> (not mentioned in the book) from Lagrange.
+Firstly we can get the general solution of the corresponding homogeneous
+equation of it <span class="math display">\[
+  p_1(x)\frac{\text{d}y}{\text{d}x}+p_0 (x)y=0
+\]</span></p>
+<p><span class="math display">\[
+  \Rightarrow y=A\exp{\left(-
+\int_{x_0}^{x}\frac{p_0(t)}{p_1(t)}\text{d}t\right)}
+\]</span></p>
+<p>where <span class="math inline">\(A\)</span> is a constant and $ x_0$
+is an arbitrary number. Now we change $ A$ to a function and believe
+that there is a function $ A(x)$ that can let the solution be consistent
+with the Non-homogeneous terms. Now we bring it back, the Leibniz rule
+bring a new term too us, and let it equal to $ q(x)<span
+class="math inline">\(, i.e.\)</span>$ p_1(x)=q(x) <span
+class="math display">\[
+Let $ \mu(x)=\frac{1}{p_1(x)}\exp{ \int_{x_0}^x
+\frac{p_0(t)}{p_1(t)}\text{d}t}$, we have
+\]</span> A(x)=_{x_1}^{x}(t)q(t)t+C <span class="math display">\[
+In this way, we get a general solution of FOLDE:
+\]</span> y(x)=<span class="math display">\[
+where
+\]</span> (x)= $$</p>
+<ul>
+<li><p>Existence</p>
+<blockquote>
+<p><strong>Peano Existence Theorem</strong>: If the function <span
+class="math inline">\(F(x,y)\)</span> is continuous for the points on
+and within the rectangle defined by <span class="math inline">\(|y-c|\le
+K\)</span> and <span class="math inline">\(|x-a|\le N\)</span>, and if
+<span class="math inline">\(|F(x,y)|\le M\)</span> there, then the
+differential equation $ y'=F(x,y)$ has at least one solution defined for
+<span class="math inline">\(|x − a| ≤ \min(N,K/M)\)</span> and
+satisfying the initial condition <span class="math inline">\(f (a) =
+c\)</span>.</p>
+</blockquote></li>
 <li><p>Uniqueness</p>
-<p>Not all FODE have unique solution. A function $ F$, if we say that it satisfies <strong>Lipschitz Condition</strong> in a domain, there is a constant $ L$, for all $ x,y$ in this domain satisfy:<br>$$<br>|F(x,y_1)-F(x,y_2) |\le L|y_1-y_2|<br>$$<br>Then we can discuss the uniqueness of the solutions</p>
-</li>
+<p>Not all FODE have unique solution. A function $ F$, if we say that it
+satisfies <strong>Lipschitz Condition</strong> in a domain, there is a
+constant $ L$, for all $ x,y$ in this domain satisfy: <span
+class="math display">\[
+|F(x,y_1)-F(x,y_2) |\le L|y_1-y_2|
+\]</span> Then we can discuss the uniqueness of the solutions</p></li>
 </ul>
 <blockquote>
-<p><strong>Uniqueness Theorem</strong>: A FODE $ y’&#x3D;F(x,y)$ and $ F$ satisfies Lipschitz Condition. Suppose there are two solutions $f$ and $ g$, there is<br>$$<br>|f’-g’|\le L|f-g|<br>$$<br>Notice that $ |f-g|’&#x3D;|f’-g’| $, and  both of $ f,g$  satisfy the initial condition, integrate both sides:<br>$$<br>|f(x)-g(x) |\le \text{e}^{L|x-a|}|f(a)-g(a)|&#x3D;0<br>$$<br>which means $ f&#x3D;g$.</p>
+<p><strong>Uniqueness Theorem</strong>: A FODE $ y'=F(x,y)$ and $ F$
+satisfies Lipschitz Condition. Suppose there are two solutions <span
+class="math inline">\(f\)</span> and $ g<span class="math inline">\(,
+there is\)</span>$ |f'-g'|L|f-g| <span class="math display">\[
+Notice that $ |f-g|&#39;=|f&#39;-g&#39;| $, and  both of $ f,g$  satisfy
+the initial condition, integrate both sides:
+\]</span> |f(x)-g(x) |^{L|x-a|}|f(a)-g(a)|=0 $$ which means $ f=g$.</p>
 </blockquote>
-<p>​	By combining two theorem above, an FODE that has unique solution needs to satisfy: $F$ is defined and continuous in the rectangle $|y − c| ≤ K$, $|x − a| ≤ N$ and satisfies a Lipschitz condition there. </p>
-<h2 id="General-Properties-of-SOLDEs"><a href="#General-Properties-of-SOLDEs" class="headerlink" title="General Properties of SOLDEs"></a>General Properties of SOLDEs</h2><ul>
-<li><p>The general form of SOLDEs and the definition of singular points. </p>
-<p>According to the definition of “linear”, the general form of SOLDEs is<br>$$<br>p_2(x)\frac{\text{d}^2 y}{\text{d}x^2}+p_1(x)\frac{\text{d} y}{\text{d}x}+p_0(x)y&#x3D;p_3(x)<br>$$<br>To simplify the equation, we want to divide $ p_2(x)$ from both sides, which needs $ p_2(x)\neq 0$. This means the points where $ p_2(x)$ varnishes are  special, so we define the points at which $ p_2(x)$ varnishes are called the <strong>singular points</strong> of the differential equation. One thing that’s crucial is, singular points of SOLDEs are special and essentially different from the non-linear ones.</p>
-<p>At the same time, we can define the SOLDEs that have a better property (we don’t need to worry about whether we can divide $ p_2(2)$) as <strong>regular</strong> on a interval $[a,b]$, if there is no singular point on $ [a,b]$.</p>
-</li>
-<li><p>Superposition Principle. </p>
-<p>The linear operator of a SOLDE is<br>$$<br>\hat{L}&#x3D;p_2\hat{D}^2+p_1\hat{D}+p_0<br>$$<br>the linearity of it means, for all solutions $ f,g$<br>$$<br>\hat{L}(f-g)&#x3D;\hat{L}(f)-\hat{L}(g)&#x3D;p_3-p_3&#x3D;0<br>$$<br>which shows that the difference between two solutions of a non-homogeneous SOLDE is a solution of its corresponding homogeneous SOLDE. In the same way, we can also say that any linear combination of the solutions of a homogeneous SOLDE is also a solution of it. </p>
-</li>
-<li><p>Existence&#x2F;Uniqueness</p>
-<p>We’ve noticed that the difference between two solutions of a non-homogeneous SOLDE is a solution of its corresponding homogeneous SOLDE, so if we want to claim that the solution of an SOLDE with initial conditions is unique, we need to consider the property of the solutions of an HSOLDE  with the initial condition of $ g(a)&#x3D;g(a)’&#x3D;0$. Then it comes to the lemma:</p>
-</li>
+<p>​ By combining two theorem above, an FODE that has unique solution
+needs to satisfy: <span class="math inline">\(F\)</span> is defined and
+continuous in the rectangle <span class="math inline">\(|y − c| ≤
+K\)</span>, <span class="math inline">\(|x − a| ≤ N\)</span> and
+satisfies a Lipschitz condition there.</p>
+<h2 id="general-properties-of-soldes">General Properties of SOLDEs</h2>
+<ul>
+<li><p>The general form of SOLDEs and the definition of singular
+points.</p>
+<p>According to the definition of "linear", the general form of SOLDEs
+is <span class="math display">\[
+p_2(x)\frac{\text{d}^2 y}{\text{d}x^2}+p_1(x)\frac{\text{d}
+y}{\text{d}x}+p_0(x)y=p_3(x)
+\]</span> To simplify the equation, we want to divide $ p_2(x)$ from
+both sides, which needs $ p_2(x)$. This means the points where $ p_2(x)$
+varnishes are special, so we define the points at which $ p_2(x)$
+varnishes are called the <strong>singular points</strong> of the
+differential equation. One thing that's crucial is, singular points of
+SOLDEs are special and essentially different from the non-linear
+ones.</p>
+<p>At the same time, we can define the SOLDEs that have a better
+property (we don't need to worry about whether we can divide $ p_2(2)$)
+as <strong>regular</strong> on a interval <span
+class="math inline">\([a,b]\)</span>, if there is no singular point on $
+[a,b]$.</p></li>
+<li><p>Superposition Principle.</p>
+<p>The linear operator of a SOLDE is <span class="math display">\[
+\hat{L}=p_2\hat{D}^2+p_1\hat{D}+p_0
+\]</span> the linearity of it means, for all solutions $ f,g$ <span
+class="math display">\[
+\hat{L}(f-g)=\hat{L}(f)-\hat{L}(g)=p_3-p_3=0
+\]</span> which shows that the difference between two solutions of a
+non-homogeneous SOLDE is a solution of its corresponding homogeneous
+SOLDE. In the same way, we can also say that any linear combination of
+the solutions of a homogeneous SOLDE is also a solution of it.</p></li>
+<li><p>Existence/Uniqueness</p>
+<p>We've noticed that the difference between two solutions of a
+non-homogeneous SOLDE is a solution of its corresponding homogeneous
+SOLDE, so if we want to claim that the solution of an SOLDE with initial
+conditions is unique, we need to consider the property of the solutions
+of an HSOLDE with the initial condition of $ g(a)=g(a)'=0$. Then it
+comes to the lemma:</p></li>
 </ul>
 <blockquote>
-<p><strong>Lemma</strong>: The only solution $g(x)$ of the homogeneous differential equation $y’’ + py’ + qy &#x3D; 0$ defined on the interval $[a,b]$ that satisfies $g(a) &#x3D; 0 &#x3D; g (a)$ is the trivial solution $g &#x3D; 0$.</p>
-<p>Proof:  Introduce an nonnegative function $ u&#x3D;g^2+g’^2$ and its derivative is:<br>$$<br>u’&#x3D;2gg’+2g’g’’&#x3D;2gg’+2g’(-pg’-qg)&#x3D;-2p(g’)^2+2(1-q)gg’<br>$$<br>With some basic inequality we have:<br>$$<br>2(1-g)gg’\le 2(1+|q|)|gg’|\le (1+|q|)(g^2+(g’)^2)<br>$$<br>then<br>$$<br>u’\le 2|p|(g’)^2+(1+|q|)(g^2+(g’)^2)&#x3D;(1+|q|)g^2+(1+|q|+2|p|)(g’)^2<br>$$<br>Let $ K&#x3D;\max { 1+|q|+2|p|}\quad \mbox{in}[a,b]$, there is $ u’\le Ku$.<br>$$<br>\Rightarrow u\le u(a)\text{e}^{K|x-a|}&#x3D;0<br>$$<br>which means $ g&#x3D;g’&#x3D;0$ for all $ x\in[a,b]$.                           </p>
+<p><strong>Lemma</strong>: The only solution <span
+class="math inline">\(g(x)\)</span> of the homogeneous differential
+equation <span class="math inline">\(y&#39;&#39; + py&#39; + qy =
+0\)</span> defined on the interval <span
+class="math inline">\([a,b]\)</span> that satisfies <span
+class="math inline">\(g(a) = 0 = g (a)\)</span> is the trivial solution
+<span class="math inline">\(g = 0\)</span>.</p>
+<p>Proof: Introduce an nonnegative function $ u=g<sup>2+g'</sup>2$ and
+its derivative is: <span class="math display">\[
+u&#39;=2gg&#39;+2g&#39;g&#39;&#39;=2gg&#39;+2g&#39;(-pg&#39;-qg)=-2p(g&#39;)^2+2(1-q)gg&#39;
+\]</span> With some basic inequality we have: <span
+class="math display">\[
+2(1-g)gg&#39;\le 2(1+|q|)|gg&#39;|\le (1+|q|)(g^2+(g&#39;)^2)
+\]</span> then <span class="math display">\[
+u&#39;\le
+2|p|(g&#39;)^2+(1+|q|)(g^2+(g&#39;)^2)=(1+|q|)g^2+(1+|q|+2|p|)(g&#39;)^2
+\]</span> Let $ K={ 1+|q|+2|p|}[a,b]$, there is $ u'Ku<span
+class="math inline">\(.\)</span>$ uu(a)^{K|x-a|}=0 $$ which means $
+g=g'=0$ for all $ x$.</p>
 </blockquote>
-<p>Once the lemma has been proved, the uniqueness theorem becomes obvious.</p>
+<p>Once the lemma has been proved, the uniqueness theorem becomes
+obvious.</p>
 <blockquote>
-<p><strong>Uniqueness Theorem of SOLDE</strong>: If  $p $ and $q$ are continuous on$ [a,b]$, then at most one solution $y &#x3D; f (x)$ of the DE $y’’ + p(x)y’ + q(x)y &#x3D; 0$ can satisfy the initial conditions $f (a) &#x3D; c_1 $and $f  (a) &#x3D; c_2$, where $c_1$ and $c_2$ are arbitrary constants.</p>
+<p><strong>Uniqueness Theorem of SOLDE</strong>: If $p $ and <span
+class="math inline">\(q\)</span> are continuous on$ [a,b]$, then at most
+one solution <span class="math inline">\(y = f (x)\)</span> of the DE
+<span class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y =
+0\)</span> can satisfy the initial conditions $f (a) = c_1 $and <span
+class="math inline">\(f  (a) = c_2\)</span>, where <span
+class="math inline">\(c_1\)</span> and <span
+class="math inline">\(c_2\)</span> are arbitrary constants.</p>
 </blockquote>
-<p>Two allowed arbitrary constants are reminding us that, the dimension of the solution space of a non-homogeneous SOLDE is $2$, i.e. if we have two “linear independent” solutions, then all solutions can be written as the linear combination of these two solutions. Now we specify what is “linear independent”. </p>
+<p>Two allowed arbitrary constants are reminding us that, the dimension
+of the solution space of a non-homogeneous SOLDE is <span
+class="math inline">\(2\)</span>, i.e. if we have two "linear
+independent" solutions, then all solutions can be written as the linear
+combination of these two solutions. Now we specify what is "linear
+independent".</p>
 <blockquote>
-<p><strong>Theorem</strong>: Let $f_1$ and $f_2$ be two solutions of the HSOLDE<br>$$<br>y’’+py’+qy&#x3D;q<br>$$<br>where $p$ and $q$ are continuous functions defined on the interval $[a,b]$. If$ (f_1(a),f_1’(a))$ and  $ (f_2(a),f_2’(a))$ are linearly independent vectors in $\mathbb{R}^2$, then every solution $g(x) $ of this HSOLDE is equal to some linear combination $g(x) &#x3D; c_1f_1(x) + c_2f_2(x) $.</p>
-<p>Proof: Because two vectors mentioned before is linear independent, any initial conditions is equal to the some linear combination of:<br>$$<br>\begin{bmatrix}<br>    g(a) \<br>    g’(a)<br>\end{bmatrix}&#x3D;c_1<br>\begin{bmatrix}<br>    f_1(a) \<br>    f_1’(a)<br>\end{bmatrix}+c_2<br>\begin{bmatrix}<br>    f_2(a) \<br>    f_2’(a)<br>\end{bmatrix}<br>$$<br>Let $ u&#x3D;g-c_1f_1-c_2f_2$, then use the lemma we have<br>$$<br>g&#x3D;c_1f_1+c_2f_2<br>$$</p>
+<p><strong>Theorem</strong>: Let <span
+class="math inline">\(f_1\)</span> and <span
+class="math inline">\(f_2\)</span> be two solutions of the HSOLDE <span
+class="math display">\[
+y&#39;&#39;+py&#39;+qy=q
+\]</span> where <span class="math inline">\(p\)</span> and <span
+class="math inline">\(q\)</span> are continuous functions defined on the
+interval <span class="math inline">\([a,b]\)</span>. If$
+(f_1(a),f_1'(a))$ and $ (f_2(a),f_2'(a))$ are linearly independent
+vectors in <span class="math inline">\(\mathbb{R}^2\)</span>, then every
+solution $g(x) $ of this HSOLDE is equal to some linear combination
+$g(x) = c_1f_1(x) + c_2f_2(x) $.</p>
+<p>Proof: Because two vectors mentioned before is linear independent,
+any initial conditions is equal to the some linear combination of: <span
+class="math display">\[
+\begin{bmatrix}
+  g(a) \\
+  g&#39;(a)
+\end{bmatrix}=c_1
+\begin{bmatrix}
+  f_1(a) \\
+  f_1&#39;(a)
+\end{bmatrix}+c_2
+\begin{bmatrix}
+  f_2(a) \\
+  f_2&#39;(a)
+\end{bmatrix}
+\]</span> Let $ u=g-c_1f_1-c_2f_2<span class="math inline">\(, then use
+the lemma we have\)</span>$ g=c_1f_1+c_2f_2 $$</p>
 </blockquote>
-<h2 id="The-Wronskian"><a href="#The-Wronskian" class="headerlink" title="The Wronskian"></a>The Wronskian</h2><p>  The Wronskian of two differentiable functions is<br>$$<br>W(f_1,f_2,x)&#x3D;\begin{vmatrix}<br>f_1 &amp; f_1’ \<br>f_2 &amp; f_2’<br>\end{vmatrix}<br>$$<br>In the finite dimensional vector space, the determinant of a matrix shows the linear dependency of its row vectors, so the Wronskian may have something to do with the linear dependency of these two functions. </p>
+<h2 id="the-wronskian">The Wronskian</h2>
+<p>The Wronskian of two differentiable functions is <span
+class="math display">\[
+W(f_1,f_2,x)=\begin{vmatrix}
+f_1 &amp; f_1&#39; \\
+f_2 &amp; f_2&#39;
+\end{vmatrix}
+\]</span> In the finite dimensional vector space, the determinant of a
+matrix shows the linear dependency of its row vectors, so the Wronskian
+may have something to do with the linear dependency of these two
+functions.</p>
 <blockquote>
-<p><strong>Theorem</strong>: Two differentiable functions $f_1$ and $f_2$, which are nonzero in the interval $[a,b]$, are linearly dependent if and only if their Wronskian vanishes.</p>
-<p>Proof: we have<br>$$<br>f_1f_2’-f_2f_1’&#x3D;0<br>$$<br>Because $ f_1,f_2$ is nonzero, we have<br>$$<br>\left(\frac{f_2}{f_1}\right)’&#x3D;\frac{f_1f_2’-f_2f_1’}{f_1^2}&#x3D;0<br>$$<br>so $ f_1&#x3D;Cf_2$. where $C$ is a constant. </p>
+<p><strong>Theorem</strong>: Two differentiable functions <span
+class="math inline">\(f_1\)</span> and <span
+class="math inline">\(f_2\)</span>, which are nonzero in the interval
+<span class="math inline">\([a,b]\)</span>, are linearly dependent if
+and only if their Wronskian vanishes.</p>
+<p>Proof: we have <span class="math display">\[
+f_1f_2&#39;-f_2f_1&#39;=0
+\]</span> Because $ f_1,f_2$ is nonzero, we have <span
+class="math display">\[
+\left(\frac{f_2}{f_1}\right)&#39;=\frac{f_1f_2&#39;-f_2f_1&#39;}{f_1^2}=0
+\]</span> so $ f_1=Cf_2$. where <span class="math inline">\(C\)</span>
+is a constant.</p>
 </blockquote>
-<p>Then consider two solutions’ Wronskian. All we know is about the 2-order derivative of two functions, so we take the derivative of $W$:<br>$$<br>\frac{\text{d}W}{\text{d}x}&#x3D;f_1f_2’’-f_2f_1’’&#x3D;-p(f_1f_2’-f_2f_1’)&#x3D;-pW<br>$$</p>
-<p>$$<br>\Rightarrow W&#x3D;W(f_1,f_2,c)\text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
-<p>It’s an important proposition. </p>
-<h3 id="A-Second-Solution-to-the-HSOLDE"><a href="#A-Second-Solution-to-the-HSOLDE" class="headerlink" title="A Second Solution to the HSOLDE"></a>A Second Solution to the HSOLDE</h3><p>If we’ve already known a solution of a HSOLDE, then we can use the Wronskian to calculate the another:<br>$$<br>f_1f_2’-f_2f_1’&#x3D;W(c)\text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
-<p>$$<br>\Rightarrow \left(\frac{f_2}{f_1}\right)’&#x3D; \frac{C}{f_1^2} \text{e}^{-\int_c^xp(t)\text{d}t}<br>$$</p>
-<p>The result is<br>$$<br>f_2(x)&#x3D;f_1(x)\left[ C+K\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t \right)} \text{ds} \right]<br>$$</p>
+<p>Then consider two solutions' Wronskian. All we know is about the
+2-order derivative of two functions, so we take the derivative of <span
+class="math inline">\(W\)</span>: <span class="math display">\[
+\frac{\text{d}W}{\text{d}x}=f_1f_2&#39;&#39;-f_2f_1&#39;&#39;=-p(f_1f_2&#39;-f_2f_1&#39;)=-pW
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow W=W(f_1,f_2,c)\text{e}^{-\int_c^xp(t)\text{d}t}
+\]</span></p>
+<p>It's an important proposition.</p>
+<h3 id="a-second-solution-to-the-hsolde">A Second Solution to the
+HSOLDE</h3>
+<p>If we've already known a solution of a HSOLDE, then we can use the
+Wronskian to calculate the another: <span class="math display">\[
+f_1f_2&#39;-f_2f_1&#39;=W(c)\text{e}^{-\int_c^xp(t)\text{d}t}
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow \left(\frac{f_2}{f_1}\right)&#39;= \frac{C}{f_1^2}
+\text{e}^{-\int_c^xp(t)\text{d}t}
+\]</span></p>
+<p>The result is <span class="math display">\[
+f_2(x)=f_1(x)\left[
+C+K\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t
+\right)} \text{ds} \right]
+\]</span></p>
 <blockquote>
-<p><strong>Theorem</strong>: Let $f_1$ be a solution of $ y’’+py’+qy&#x3D;0$, then<br>$$<br>f_2(x)&#x3D;f_1(x)\int_{x_0}^x\frac{1}{f_1^2(s)}\exp{\left(-\int_c^sp(t)\text{d}t \right)} \text{ds}<br>$$<br>is another solution linearly independent with $f_1(x)$.</p>
+<p><strong>Theorem</strong>: Let <span
+class="math inline">\(f_1\)</span> be a solution of $ y''+py'+qy=0<span
+class="math inline">\(, then\)</span>$ f_2(x)=f_1(x)_{x_0}^x $$ is
+another solution linearly independent with <span
+class="math inline">\(f_1(x)\)</span>.</p>
 </blockquote>
 <blockquote>
-<p><strong>Example</strong>: Legendre DE:<br>$$<br>\frac{\text{d}}{\text{d}x}(1-x^2)\frac{\text{d}y}{\text{d}x}+n(n+1)y&#x3D;0<br>$$<br>from which we have $ p(x)&#x3D;-\frac{2x}{1-x^2}$. One solution of this HSOLDE is the well-known Legendre polynomial $P_n(x)$. Another solution $Q_n$ is<br>$$<br>\begin{aligned}<br>Q_n(x)&amp;&#x3D;P_n(x)\int_{x_0}^x\frac{1}{P_n^2(s)}\exp\left(-\int_0^sp(t)\text{d}t\right)\text{d}s \<br>&amp;&#x3D;P_n(x)\int_{x_0}^x \frac{\text{d}s}{P_n^2(s)(1-s^2)}<br>\end{aligned}<br>$$<br>For example:<br>$$<br>Q_0&#x3D;\int_{x_0}^x\frac{\text{d}s}{1-s^2}&#x3D;\frac{1}{2}\ln\bigg|\frac{1+x}{1-x}\bigg|<br>$$</p>
-<p>$$<br>Q_1&#x3D;x\int_{x_0}^x\frac{\text{d}s}{s^2(1-s^2)}&#x3D;\frac{1}{2}x\ln\bigg|\frac{1+x}{1-x}\bigg|<br>$$</p>
+<p><strong>Example</strong>: Legendre DE: <span class="math display">\[
+\frac{\text{d}}{\text{d}x}(1-x^2)\frac{\text{d}y}{\text{d}x}+n(n+1)y=0
+\]</span> from which we have $ p(x)=-$. One solution of this HSOLDE is
+the well-known Legendre polynomial <span
+class="math inline">\(P_n(x)\)</span>. Another solution <span
+class="math inline">\(Q_n\)</span> is <span class="math display">\[
+\begin{aligned}
+Q_n(x)&amp;=P_n(x)\int_{x_0}^x\frac{1}{P_n^2(s)}\exp\left(-\int_0^sp(t)\text{d}t\right)\text{d}s
+\\
+&amp;=P_n(x)\int_{x_0}^x \frac{\text{d}s}{P_n^2(s)(1-s^2)}
+\end{aligned}
+\]</span> For example: <span class="math display">\[
+Q_0=\int_{x_0}^x\frac{\text{d}s}{1-s^2}=\frac{1}{2}\ln\bigg|\frac{1+x}{1-x}\bigg|
+\]</span></p>
+<p><span class="math display">\[
+Q_1=x\int_{x_0}^x\frac{\text{d}s}{s^2(1-s^2)}=\frac{1}{2}x\ln\bigg|\frac{1+x}{1-x}\bigg|
+\]</span></p>
 </blockquote>
-<h3 id="General-Solution-to-an-ISOLDE"><a href="#General-Solution-to-an-ISOLDE" class="headerlink" title="General Solution to an ISOLDE"></a>General Solution to an ISOLDE</h3><ul>
+<h3 id="general-solution-to-an-isolde">General Solution to an
+ISOLDE</h3>
+<ul>
 <li><p>General solution to an ISOLDE</p>
-<p>We’ve finished the discussion about HSOLDE and know that the general solutions are linear combinations of two linear independent solutions. Then if we have a <strong>particular</strong> solution $ g(x)$to an ISOLDE, according to the properties of SOLDE, any solution of it can be expressed by the following form:</p>
-</li>
+<p>We've finished the discussion about HSOLDE and know that the general
+solutions are linear combinations of two linear independent solutions.
+Then if we have a <strong>particular</strong> solution $ g(x)$to an
+ISOLDE, according to the properties of SOLDE, any solution of it can be
+expressed by the following form:</p></li>
 </ul>
-<p>$$<br>h(x)&#x3D;c_1f_1(x)+c_2f_2(x)+g(x)<br>$$</p>
+<p><span class="math display">\[
+h(x)=c_1f_1(x)+c_2f_2(x)+g(x)
+\]</span></p>
 <ul>
 <li><p>The method of variation of constants</p>
-<p>Let $ f_1$ and $ f_2$ be the two known solutions of the HSOLDE and $ g(x)$ is the linear combination of them. Suppose $ g&#x3D;v(x)f_1(x)$, bring it back:<br>$$<br>v’’+\left(p+\frac{2f’}{f}\right)v’&#x3D;\frac{r}{f_1}<br>$$<br>Its a FOLDE of $ v’$, the solution can be easily written down:<br>$$<br>v’&#x3D;\frac{W(x)}{f_1^2(x)}\left[C+\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t \right]<br>$$<br>where we’ve already used $ \exp{\int p\text{d}x}&#x3D;\frac{W(c)}{W(x)}$. Let $C&#x3D;0$.<br>$$<br>\Rightarrow v’&#x3D;\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t\cdot\frac{\text{d}}{\text{d}x}\frac{f_2}{f_1}&#x3D;\frac{\text{d}}{\text{d}x}\left[\frac{f_2}{f_1} \int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t\right]-\frac{f_2}{f_1}\frac{f_1(x) r(x)}{W(x)}<br>$$</p>
-<p>$$<br>\Rightarrow v&#x3D;\frac{f_2}{f_1}\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x \frac{f_2(t)r(t)}{W(t)}\text{d}t<br>$$</p>
-<p>By doing so, we get a particular solution, which allow us to express the solutions of a ISOLDE by two homogeneous solutions:<br>$$<br>y(x)&#x3D;c_1f_1(x)+c_2 f_2(x )+\frac{f_2}{f_1}\int_a^x \frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x \frac{f_2(t)r(t)}{W(t)}\text{d}t<br>$$</p>
-</li>
+<p>Let $ f_1$ and $ f_2$ be the two known solutions of the HSOLDE and $
+g(x)$ is the linear combination of them. Suppose $ g=v(x)f_1(x)<span
+class="math inline">\(, bring it back:\)</span>$ v''+(p+)v'= <span
+class="math display">\[
+Its a FOLDE of $ v&#39;$, the solution can be easily written down:
+\]</span> v'=<span class="math display">\[
+where we&#39;ve already used $ \exp{\int p\text{d}x}=\frac{W(c)}{W(x)}$.
+Let $C=0$.
+\]</span> v'=_a^x t=- $$</p>
+<p><span class="math display">\[
+\Rightarrow v=\frac{f_2}{f_1}\int_a^x
+\frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x
+\frac{f_2(t)r(t)}{W(t)}\text{d}t
+\]</span></p>
+<p>By doing so, we get a particular solution, which allow us to express
+the solutions of a ISOLDE by two homogeneous solutions: <span
+class="math display">\[
+y(x)=c_1f_1(x)+c_2 f_2(x )+\frac{f_2}{f_1}\int_a^x
+\frac{f_1(t)r(t)}{W(t)}\text{d}t-\int_a^x
+\frac{f_2(t)r(t)}{W(t)}\text{d}t
+\]</span></p></li>
 </ul>
-<h3 id="Separation-and-Comparison-Theorems"><a href="#Separation-and-Comparison-Theorems" class="headerlink" title="Separation and Comparison Theorems"></a>Separation and Comparison Theorems</h3><blockquote>
-<p><strong>Separation Theorem</strong>: The zeros of two linearly independent solutions of an HSOLDE occur alternately </p>
-<p>Proof: Suppose $ x_i$ is a zero of $ f_2$, then<br>$$<br>0\neq W(f_1,f_2,x_i)&#x3D;f_1(x_i)f_2’(x_i)<br>$$</p>
+<h3 id="separation-and-comparison-theorems">Separation and Comparison
+Theorems</h3>
+<blockquote>
+<p><strong>Separation Theorem</strong>: The zeros of two linearly
+independent solutions of an HSOLDE occur alternately</p>
+<p>Proof: Suppose $ x_i$ is a zero of $ f_2<span class="math inline">\(,
+then\)</span>$ 0W(f_1,f_2,x_i)=f_1(x_i)f_2'(x_i) $$</p>
 </blockquote>
 
     </div>
@@ -383,7 +631,11 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Forms-and-Properties"><span class="nav-number">1.</span> <span class="nav-text">General Forms and Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Existence-Uniqueness-for-FODEs"><span class="nav-number">2.</span> <span class="nav-text">Existence&#x2F;Uniqueness for FODEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Properties-of-SOLDEs"><span class="nav-number">3.</span> <span class="nav-text">General Properties of SOLDEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Wronskian"><span class="nav-number">4.</span> <span class="nav-text">The Wronskian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Second-Solution-to-the-HSOLDE"><span class="nav-number">4.1.</span> <span class="nav-text">A Second Solution to the HSOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Solution-to-an-ISOLDE"><span class="nav-number">4.2.</span> <span class="nav-text">General Solution to an ISOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Separation-and-Comparison-Theorems"><span class="nav-number">4.3.</span> <span class="nav-text">Separation and Comparison Theorems</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#general-forms-and-properties"><span class="nav-number">1.</span> <span class="nav-text">General Forms and Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#existenceuniqueness-for-fodes"><span class="nav-number">2.</span> <span class="nav-text">Existence&#x2F;Uniqueness for
+FODEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#general-properties-of-soldes"><span class="nav-number">3.</span> <span class="nav-text">General Properties of SOLDEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-wronskian"><span class="nav-number">4.</span> <span class="nav-text">The Wronskian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-second-solution-to-the-hsolde"><span class="nav-number">4.1.</span> <span class="nav-text">A Second Solution to the
+HSOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#general-solution-to-an-isolde"><span class="nav-number">4.2.</span> <span class="nav-text">General Solution to an
+ISOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#separation-and-comparison-theorems"><span class="nav-number">4.3.</span> <span class="nav-text">Separation and Comparison
+Theorems</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,6 +747,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
