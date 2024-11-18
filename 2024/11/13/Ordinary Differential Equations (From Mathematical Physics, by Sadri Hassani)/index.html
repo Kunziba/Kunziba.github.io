@@ -28,7 +28,7 @@
 <meta property="og:description" content="Basic knowledge of ODE (Building...)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-13T15:35:00.000Z">
-<meta property="article:modified_time" content="2024-11-17T08:23:16.229Z">
+<meta property="article:modified_time" content="2024-11-18T08:46:19.463Z">
 <meta property="article:author" content="KunziBa">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="笔记">
@@ -188,7 +188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-17 16:23:16" itemprop="dateModified" datetime="2024-11-17T16:23:16+08:00">2024-11-17</time>
+                <time title="修改时间：2024-11-18 16:46:19" itemprop="dateModified" datetime="2024-11-18T16:46:19+08:00">2024-11-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -676,6 +676,131 @@ class="math display">\[
 J_0(x)=\frac{\sin x}{\sqrt{x}}
 \]</span></p>
 </blockquote>
+<h2 id="adjoint-differential-operators">Adjoint Differential
+Operators</h2>
+<p>Self-adjoint differential operators are equally important because
+their “eigenfunctions” also form complete orthogonal sets.</p>
+<ul>
+<li><p>Exact HSOLDE and integrating factors</p>
+<p>A HSOLDE is said to be exact, if <span class="math display">\[
+0=\hat{L}(f)=p_2(x)f&#39;&#39;(x)+p_1(x)f&#39;(x)+p_0
+f(x)=\frac{\text{d}}{\text{d}x}\left( A(x)f&#39;(x)+B(x)f(x) \right)
+\]</span> An integrating factor for <span
+class="math inline">\(\hat{L}(f)\)</span> is a function <span
+class="math inline">\(\mu(x)\)</span> such that <span
+class="math inline">\(\mu(x)\hat{L}(f)\)</span> is exact.</p>
+<p>Consider a ISOLDE with an inhomogeneous term <span
+class="math inline">\(r(x)\)</span> that has an integrating factor <span
+class="math inline">\(\mu(x)\)</span>, then <span
+class="math display">\[
+A(x)y&#39;+B(x)y=\int_{\alpha}^x \mu(t)r(t)\text{d}t
+\]</span> which is a general FOLDE which can be solved easily. Thus, the
+existence of integrating factors completely solves a SOLDE.</p></li>
+</ul>
+<blockquote>
+<p><strong>Proposition</strong>: The HSOLDE is exact, if and only if
+<span class="math inline">\(p_2&#39;&#39;-p_1&#39;+p_0=0\)</span>.</p>
+<p>Proof: If the HSOLDE is exact, then <span class="math display">\[
+p_2f&#39;&#39;+p_1f&#39;+p_0=Af&#39;&#39;+(A&#39;+B)f&#39;+B&#39;f
+\]</span> which implies that <span
+class="math inline">\(p_2=A,p_1=(A&#39;+B),p_0=B&#39;\)</span> , and it
+in turn gives <span class="math display">\[
+p_2&#39;&#39;-p_1&#39;+p_0=0
+\]</span> Conversely, if we have <span
+class="math inline">\(p_0=p_1&#39;-p_2&#39;&#39;\)</span>, then the
+HSOLDE becomes <span class="math display">\[
+p_2f&#39;&#39;+p_1f&#39;+p_1&#39;f-p_2&#39;&#39;f=0
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow
+\frac{\text{d}}{\text{d}x}\left(p_2f&#39;-p_2&#39;f+p_1f   \right)=0
+\]</span></p>
+</blockquote>
+<p>From this proposition, how to find an integrating factor becomes
+clear: <span class="math inline">\(\mu(x)\)</span> should satisfy: <span
+class="math display">\[
+\hat{M}\mu(x)=(p_2\mu)&#39;&#39;-(p_1\mu)&#39;+p_0\mu=0
+\]</span> Expand the equation above to get the form of <span
+class="math inline">\(\hat{M}\)</span>: <span class="math display">\[
+\hat{M}=p_2\frac{\text{d}^2}{\text{d}x^2}+(2p_2&#39;-p_1)\frac{\text{d}}{\text{d}x}+(p_2&#39;&#39;-p_1&#39;+p_0)
+\]</span></p>
+<ul>
+<li>Adjoint Differential Operators:</li>
+</ul>
+<p>​ The adjoint differential operator <span
+class="math inline">\(\hat{M}\)</span> of <span
+class="math inline">\(\hat{L}=p_2\frac{\text{d}^2}{\text{d}x^2}+p_1\frac{\text{d}}{\text{d}x}+p_0\)</span>
+is defined as: <span class="math display">\[
+\hat{M}=p_2\frac{\text{d}^2}{\text{d}x^2}+(2p_2&#39;-p_1)\frac{\text{d}}{\text{d}x}+(p_2&#39;&#39;-p_1&#39;+p_0)
+\]</span> ​ and is denoted by <span
+class="math inline">\(\hat{M}=\hat{L}^{\dagger}\)</span>. It can be
+easily verified that <span
+class="math inline">\((\hat{L}^{\dagger})^{\dagger}=\hat{L}\)</span>,
+which suggests that if <span class="math inline">\(u\)</span> is an
+integrating factor of <span class="math inline">\(\hat{L}(u)\)</span>,
+then u will be an integrating factor of <span
+class="math inline">\(\hat{M}(v)\)</span>, i.e. <span
+class="math display">\[
+\begin{aligned}
+v\hat{L}(u)&amp;=vp_2u&#39;&#39;+vp_1u&#39;+vp_0u \\
+u\hat{M}(v)&amp;=u(p_2v)&#39;&#39;+u(p_1v)&#39;+up_0v
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow
+v\hat{L}(u)-u\hat{M}(v)=\frac{\text{d}}{\text{d}x}\left(p_2vu&#39;-(p_2v)&#39;u+p_1uv
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\int_a^b (v\hat{L}(u)-u\hat{M}(v)
+)\text{d}x=[p_2vu&#39;-(p_2v)&#39;u+p_1uv]\big|_a^b
+\]</span></p>
+<p>This is <strong>Lagrange Identities</strong>, which shows the
+definition here is consistent with the definition in the quantum
+mechanic. Consider <span class="math inline">\(u\)</span> and <span
+class="math inline">\(v\)</span> as two vectors in the Hilbert Space and
+<span class="math inline">\(L\)</span> and <span
+class="math inline">\(M\)</span> are operators on it.</p>
+<p>The equation can be written as: <span class="math display">\[
+\langle v|\hat{L}|u\rangle -\langle u|\hat{M}|v\rangle= \langle
+u|\hat{L}^{\dagger}|v\rangle^*-\langle u|\hat{M}|v\rangle=
+[p_2vu&#39;-(p_2v)&#39;u+p_1uv]\big|_a^b
+\]</span> if the r.h.s is zero, then we have <span
+class="math inline">\(\langle u|\hat{L}^{\dagger}|v\rangle^*=\langle
+u|\hat{M}|v\rangle\)</span>, because <span
+class="math inline">\(u\)</span> and <span
+class="math inline">\(v\)</span> are all real, there is <span
+class="math inline">\(\hat{L}^{\dagger}=\hat{M}\)</span>.</p>
+<ul>
+<li>Self-Adjoint Operators. If we want that <span
+class="math inline">\(\hat{L}^{\dagger}=\hat{L}\)</span>, then there is
+<span class="math inline">\(p_2&#39;=p_1\)</span> by comparison. So we
+can write the HSOLDE as <span class="math display">\[
+\frac{\text{d}}{\text{d}x}\left( p_2 \frac{\text{d}f}{\text{d}x}
+\right)+p_0f(x)=0
+\]</span> Can we make all SOLDE self-adjoint? Multiply a function <span
+class="math inline">\(h\)</span> in the both side: <span
+class="math display">\[
+hp_2f&#39;&#39;+hp_1f&#39;+hp_0f=0
+\]</span> we demand <span
+class="math inline">\((hp_2)&#39;=hp_1\)</span>, then we get <span
+class="math display">\[
+h(x)=\frac{1}{p_2}\exp\left( \int^x\frac{p_1(t)}{p_2(t)}\text{d}t
+\right)
+\]</span> In this we, we can make all SOLDE self-adjoint.</li>
+</ul>
+<blockquote>
+<p><strong>Example</strong>: Bessel Equation: <span
+class="math display">\[
+y&#39;&#39;+\frac{1}{x}y&#39;+\left(1-\frac{n^2}{x^2} \right)y=0
+\]</span> we have <span class="math display">\[
+h(x)=\exp\left( \int^x\frac{1}{t}\text{d}t \right)=x
+\]</span></p>
+<p><span class="math display">\[
+\frac{\text{d}}{\text{d}x}\left(x\frac{\text{d}y}{\text{d}x}
+\right)+\left(x-\frac{n^2}{x} \right)y=0
+\]</span></p>
+</blockquote>
 
     </div>
 
@@ -761,7 +886,8 @@ J_0(x)=\frac{\sin x}{\sqrt{x}}
 FODEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#general-properties-of-soldes"><span class="nav-number">3.</span> <span class="nav-text">General Properties of SOLDEs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-wronskian"><span class="nav-number">4.</span> <span class="nav-text">The Wronskian</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-second-solution-to-the-hsolde"><span class="nav-number">4.1.</span> <span class="nav-text">A Second Solution to the
 HSOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#general-solution-to-an-isolde"><span class="nav-number">4.2.</span> <span class="nav-text">General Solution to an
 ISOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#separation-and-comparison-theorems"><span class="nav-number">4.3.</span> <span class="nav-text">Separation and Comparison
-Theorems</span></a></li></ol></li></ol></div>
+Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adjoint-differential-operators"><span class="nav-number">5.</span> <span class="nav-text">Adjoint Differential
+Operators</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
