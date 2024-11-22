@@ -28,7 +28,7 @@
 <meta property="og:description" content="Basic knowledge of ODE (Building...)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-13T15:35:00.000Z">
-<meta property="article:modified_time" content="2024-11-21T11:43:20.079Z">
+<meta property="article:modified_time" content="2024-11-22T15:14:15.494Z">
 <meta property="article:author" content="KunziBa">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="笔记">
@@ -188,7 +188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-21 19:43:20" itemprop="dateModified" datetime="2024-11-21T19:43:20+08:00">2024-11-21</time>
+                <time title="修改时间：2024-11-22 23:14:15" itemprop="dateModified" datetime="2024-11-22T23:14:15+08:00">2024-11-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -947,6 +947,123 @@ E_l=\frac{\hbar\omega}{2}(1+\lambda)=\hbar\omega\left(l+\frac{1}{2}
 \]</span> which means the energy of an harmonic oscillator is
 quantized.</p>
 </blockquote>
+<h3 id="quantum-harmonic-oscillator">Quantum Harmonic Oscillator</h3>
+<p>This section solves the Hermite Equation by ladder operator, which is
+not a general methods of solving DE, so this section will be escaped
+(temporary, perhaps).</p>
+<h2 id="soldes-with-constant-coefficients">SOLDEs with Constant
+Coefficients</h2>
+<p>The most general <span class="math inline">\(n\)</span>th-order
+linear differential equation with constant coefficients can be written
+as <span class="math display">\[
+\hat{L}(y)=y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y&#39;+a_0y=r(x)
+\]</span></p>
+<ul>
+<li>The solutions of HNOLDEs: The corresponding HNOLDE has <span
+class="math inline">\(r(x)=0\)</span>, which means, the derivatives of a
+solution are linear dependent to itself, so it's a reasonable guess that
+the solution has a form like <span class="math inline">\(e^{\lambda
+x}\)</span>. Bring the solution back:</li>
+</ul>
+<p><span class="math display">\[
+\hat{L}(y)=(\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda+a_0)e^{\lambda
+x}=0
+\]</span></p>
+<p>​ The equation will hold only if <span
+class="math inline">\(\lambda\)</span> is a zero of the
+<strong>characteristic polynomial</strong>: <span
+class="math display">\[
+p(x)\equiv x^n+a_{n-1}x^{n-1}+\cdots+a_1 x+a_0
+\]</span> ​ which, by the fundamental theorem of algebra, can be written
+as: <span class="math display">\[
+p(x)=(x-\lambda_1)^{k_1}(x-\lambda_2)^{k_2}\cdots(xa-\lambda_m)^{k_m}
+\]</span> where <span class="math inline">\(\lambda_j\)</span> is a
+complex zero with multiplicity of <span
+class="math inline">\(k_j\)</span>. The condition that <span
+class="math inline">\(k_j\ge 2\)</span> is a little bit troublesome
+because we need to find <span class="math inline">\(n\)</span> linear
+independent solutions. Fortunately, we can still find out <span
+class="math inline">\(n\)</span> linear independent solutions by
+characteristic polynomial, but some of the solutions are more than just
+<span class="math inline">\(e^{\lambda x}\)</span>.</p>
+<blockquote>
+<p><strong>Theorem</strong>: Let <span
+class="math inline">\(\{λ_j\}_{j=1}^m\)</span> be the distinct roots of
+the characteristic polynomial of the real HNOLDE of with multiplicities
+<span class="math inline">\(\{k_j \}_{j=1}^m\)</span>. Then the
+functions <span class="math display">\[
+\{  e^{\lambda_j x},xe^{\lambda_j x},\ldots,x^{k_j-1}e^{\lambda_j
+x}\}_{j=1}^m
+\]</span> are a basis of solutions.</p>
+</blockquote>
+<blockquote>
+<p><strong>Example</strong>: damped oscillators. The damped oscillator
+satisfies the equation: <span class="math display">\[
+\ddot{x}+\gamma\dot{x}+\omega_0^2x=0
+\]</span> where <span class="math inline">\(\gamma\)</span> is called
+the damping factor. There are three different conditions called
+over-damped, critically-damped and under-damped respectively. As an
+example, under-damped condition means <span
+class="math inline">\(\gamma^2&lt;4\omega_0^2\)</span>. Two zeros of the
+characteristic polynomial is <span class="math display">\[
+\lambda_{1,2}=-\frac{\gamma}{2}\pm
+i\sqrt{\omega_0^2-\left(\frac{\gamma}{2} \right)^2}
+\]</span> The solution is: <span class="math display">\[
+x=Ae^{-(\gamma/2)t}\cos\left(\sqrt{\omega_0^2-\left(\frac{\gamma}{2}\right)^2}t+\phi_0
+\right)
+\]</span> The amplitude is modulate by the factor <span
+class="math inline">\(e^{-(\gamma/2)t}\)</span>.</p>
+</blockquote>
+<ul>
+<li><p>The solutions of INOLDEs:</p>
+<blockquote>
+<p><strong>Theorem</strong>: The INOLDE <span
+class="math inline">\(\hat{L}(y)= e^{\lambda x}S(x)\)</span>, where
+<span class="math inline">\(S(x)\)</span> is a polynomial, has the
+particular solution <span class="math inline">\(e^{\lambda
+x}q(x)\)</span>, where <span class="math inline">\(q(x)\)</span> is also
+a polynomial. The degree of <span class="math inline">\(q(x)\)</span>
+equals that of <span class="math inline">\(S(x)\)</span> unless <span
+class="math inline">\(\lambda =\lambda_j\)</span> , a root of the
+characteristic polynomial of L, in which case the degree of <span
+class="math inline">\(q(x)\)</span> exceeds that of S(x) by <span
+class="math inline">\(k_j\)</span> , the multiplicity of <span
+class="math inline">\(\lambda_j\)</span> .</p>
+</blockquote>
+<blockquote>
+<p><strong>Example</strong>: <span
+class="math inline">\(y&#39;&#39;+y=xe^{x}\)</span>. <span
+class="math display">\[
+\lambda=\pm i\neq 1
+\]</span> Let's guess that <span
+class="math inline">\(y=(Ax+B)e^x\)</span>, <span
+class="math display">\[
+y&#39;&#39;+y=(Ax+2A+B)e^x+(Ax+B)e^x=xe^x
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow A=\frac{1}{2},\quad B=-\frac{1}{2}
+\]</span></p>
+<p>Then we get the most general solution: <span class="math display">\[
+y=A\cos(x+\phi)+\frac{1}{2}(1-x)e^{x}
+\]</span></p>
+</blockquote>
+<blockquote>
+<p><strong>Example</strong>: <span
+class="math inline">\(y&#39;&#39;-y=xe^x\)</span>. <span
+class="math inline">\(\lambda=\pm 1\)</span>, one of which is equal to
+<span class="math inline">\(\lambda\)</span>. Thus, we need to take a
+guess that <span class="math inline">\(y=(Ax^2+Bx+C)e^x\)</span>: <span
+class="math display">\[
+(Ax^2+Bx+C+2Ax+B+2Ax+B+2A-Ax^2-Bx-C)e^x=xe^x
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow A=\frac{1}{4}, \quad B=-\frac{1}{4}
+\]</span></p>
+<p>Then we get general solutions: <span class="math display">\[
+y=Ae^x+Be^{-x}+\frac{1}{4}(x^2-x)e^x
+\]</span></p>
+</blockquote></li>
+</ul>
 
     </div>
 
@@ -1035,7 +1152,8 @@ ISOLDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href=
 Theorems</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adjoint-differential-operators"><span class="nav-number">5.</span> <span class="nav-text">Adjoint Differential
 Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#power-series-solutions-of-soldes"><span class="nav-number">6.</span> <span class="nav-text">Power-Series Solutions of
 SOLDEs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#frobenius-methods-and-undetermined-coefficients"><span class="nav-number">6.1.</span> <span class="nav-text">Frobenius
-Methods and Undetermined Coefficients</span></a></li></ol></li></ol></div>
+Methods and Undetermined Coefficients</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quantum-harmonic-oscillator"><span class="nav-number">6.2.</span> <span class="nav-text">Quantum Harmonic Oscillator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#soldes-with-constant-coefficients"><span class="nav-number">7.</span> <span class="nav-text">SOLDEs with Constant
+Coefficients</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
