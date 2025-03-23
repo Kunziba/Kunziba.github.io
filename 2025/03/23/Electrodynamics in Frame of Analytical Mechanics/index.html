@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="于2025.3.23物理讨论班分享的内容.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从分析力学到电动力学">
+<meta property="og:url" content="http://example.com/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/index.html">
+<meta property="og:site_name" content="KunziBa 的个人主页">
+<meta property="og:description" content="于2025.3.23物理讨论班分享的内容.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/images/Aharonov-Bohm_effect.jpg">
+<meta property="article:published_time" content="2025-03-23T08:21:00.000Z">
+<meta property="article:modified_time" content="2025-03-23T08:21:37.257Z">
+<meta property="article:author" content="KunziBa">
+<meta property="article:tag" content="讲义">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/images/Aharonov-Bohm_effect.jpg">
+
+<link rel="canonical" href="http://example.com/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>从分析力学到电动力学 | KunziBa 的个人主页</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KunziBa 的个人主页</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About-Me/index.html" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="KunziBa">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KunziBa 的个人主页">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从分析力学到电动力学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-03-23 16:21:00 / 修改时间：16:21:37" itemprop="dateCreated datePublished" datetime="2025-03-23T16:21:00+08:00">2025-03-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%B2%E4%B9%89%E5%92%8C%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">讲义和笔记</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">于2025.3.23物理讨论班分享的内容.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="从分析力学到电动力学">从分析力学到电动力学</h1>
+<h3 id="离散体系">离散体系</h3>
+<ul>
+<li><p>作用量: <span class="math display">\[
+S=\int L(q,\dot{q},t)\text{d}t
+\]</span></p></li>
+<li><p>动力学方程: <span class="math display">\[
+\delta S=0\Rightarrow \frac{\text{d}}{\text{d}t}\left(\frac{\partial
+L}{\partial \dot{q}}\right)-\frac{\partial L}{\partial q}=0
+\]</span></p>
+<ul>
+<li>此即<strong>Euler-Lagrange方程</strong>.</li>
+</ul></li>
+</ul>
+<h3 id="连续体系">连续体系</h3>
+<ul>
+<li><p>连续体系的特点:</p>
+<ol type="1">
+<li><p>无穷多自由度. 因此Lagrangian应作为广义坐标的泛函.</p></li>
+<li><p>离散体系的参数<span
+class="math inline">\(i,t\)</span>变为时空坐标<span
+class="math inline">\(x^{\mu}\)</span>. <span class="math display">\[
+(x^{\mu})=(ct,\vec{x})
+\]</span></p></li>
+<li><p>广义坐标: <span
+class="math inline">\(\phi=\phi(x^{\mu})\)</span>. 被称为场函数.</p>
+<blockquote>
+<p>例子:</p>
+<ul>
+<li>一维弹性体的广义坐标为<span class="math inline">\(\xi\)</span>,
+为<span class="math inline">\(x\)</span>处弹性体截面移动到的位置.</li>
+</ul>
+</blockquote></li>
+</ol></li>
+<li><p>Lagrangian:</p>
+<ul>
+<li><p><span class="math inline">\(L=L[\phi]\)</span>, 写开就是 <span
+class="math display">\[
+L=\int \mathcal{L}(x^{\mu},\phi,\cdots)\text{d}^3x
+\]</span></p>
+<ul>
+<li>动能项: <span class="math inline">\(\partial_t \phi\)</span>,
+势能项为<span class="math inline">\(\partial_{x,y,z}\phi\)</span>,
+因此有<span class="math inline">\(\partial_{\mu}\phi\)</span>.</li>
+<li>不会有更高阶的导数, 否则变分后会出现三阶或更高阶导数,
+从而违背基本假设(已知态<span
+class="math inline">\((p,q)\)</span>就可预测系统行为).</li>
+</ul></li>
+<li><p><span class="math display">\[
+L=\int \text{d}^3 x\mathcal{L}(x^{\mu},\phi,\partial_{\mu}\phi)
+\]</span></p>
+<ul>
+<li>其中<span
+class="math inline">\(\mathcal{L}\)</span>根据其物理含义被称为<strong>Lagrangian
+Density</strong>.</li>
+</ul></li>
+</ul></li>
+<li><p>作用量 <span class="math display">\[
+S=\int \text{d}t\int \text{d}^3 x\mathcal {L}=\int\text{d}^4
+x\mathcal{L}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\text{d}^4x\)</span>为四维体积微元,
+这时的Lagrangian Density 的会与原来差一个<span
+class="math inline">\(1/c\)</span>,
+如果使用自然单位制就可以忽略这个问题.</p></li>
+<li><p>四维体积元是Lorentz不变的, 因此如果希望理论是Lorentz协变的,
+需要Lagrangian Density 是一个<strong>4-scalar</strong>.</p></li>
+</ul></li>
+<li><p>场方程. <span class="math display">\[
+\begin{aligned}
+\delta S &amp;=\int \text{d}\Omega \left(\frac{\partial
+\mathcal{L}}{\partial \phi}\delta \phi+\frac{\partial
+\mathcal{L}}{\partial (\partial_{\mu}\phi)}\delta
+\partial_{\mu}\phi   \right)\\
+&amp;=\int \text{d}\Omega \partial_{\mu}\left( \delta\phi\frac{\partial
+\mathcal{L}}{\partial (\partial_{\mu}\phi)} \right)
+-\int\text{d}\Omega \left(\partial_{\mu} \frac{\partial
+\mathcal{L}}{\partial (\partial_\mu \phi)} - \frac{\partial
+\mathcal{L}}{\partial \phi}\right) \delta\phi
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p>第一项利用Gauss定理转化为时空边界上的积分, 利用固定边界条件,
+这一项为零.</p></li>
+<li><p>第二项在任意<span
+class="math inline">\(\delta\phi\)</span>下恒为零给出场方程: <span
+class="math display">\[
+\begin{aligned}
+\boxed{\partial_{\mu} \frac{\partial \mathcal{L}}{\partial (\partial_\mu
+\phi)} - \frac{\partial \mathcal{L}}{\partial \phi}=0}
+\end{aligned}
+\]</span></p></li>
+</ul></li>
+<li><p>对于矢量场, 其分量分别满足上述方程: <span class="math display">\[
+\begin{aligned}
+\boxed{\partial_{\mu} \frac{\partial \mathcal{L}}{\partial (\partial_\mu
+A^{\nu})} - \frac{\partial \mathcal{L}}{\partial A^{\nu}}=0,\quad \nu =
+0,1,2,3}
+\end{aligned}
+\]</span></p></li>
+</ul>
+<blockquote>
+<p>例子:</p>
+<p>自由标量场 <span class="math display">\[
+\mathcal{L}=\frac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi)
+\]</span> 有 <span class="math display">\[
+0=\partial_{\mu}\frac{\partial
+\mathcal{L}}{\partial(\partial_{\mu}\phi)}=\partial_{\mu}\partial^{\mu
+}\phi
+\]</span> 此即<span class="math inline">\(\phi\)</span>的波动方程.</p>
+</blockquote>
+<h2 id="二-源">二 源</h2>
+<h3 id="连续性方程">连续性方程</h3>
+<ul>
+<li><p>源的连续性方程: <span class="math display">\[
+\frac{\partial \rho}{\partial t}+\nabla\cdot\vec{j}=0
+\]</span></p>
+<ul>
+<li><p>引入 <span class="math display">\[
+(j^{\mu})=(c\rho,\vec{j})
+\]</span> 则有 <span class="math display">\[
+\partial_{\mu}j^{\mu}=0
+\]</span></p></li>
+<li><p>因为<span class="math inline">\(0\)</span>是4-scalar, <span
+class="math inline">\(\partial_{\mu}\)</span>是4-vector,
+因此根据<strong>Quotient Rule</strong>就可以知道<span
+class="math inline">\(j^{\mu}\)</span>是4-vector.</p></li>
+</ul></li>
+</ul>
+<h3 id="作用量的相互作用项">作用量的相互作用项</h3>
+<ul>
+<li><p>电磁场的描述<span
+class="math inline">\(A^{\mu}\)</span>.</p></li>
+<li><p>如何描述场与源的相互作用. <span
+class="math inline">\(\mathcal{L}\)</span>有如下要求:</p>
+<ol type="1">
+<li>4-scalar</li>
+<li>线性 (Lorentz力是线性的);</li>
+<li>*规范不变性. <span class="math inline">\(A^{\mu}\to
+A^{\mu}+\partial^{\mu}f\)</span> 后作用量不变.</li>
+</ol>
+<p><span class="math display">\[
+S_{\text{interaction}}=\int -qA_{\mu}\text{d}x^{\mu}
+\]</span></p></li>
+<li><p>带电粒子的协变运动方程. <span class="math display">\[
+S=\int -mc^2\text{d}\tau-qA_{\mu}\text{d}x^{\mu}
+\]</span></p>
+<ol type="1">
+<li><p>自由粒子项: <span class="math display">\[
+\delta S_{f}=-\int mc\delta \text{d}s=-mc\int\delta \sqrt{
+\eta^{\mu\nu}\text{d}x_{\mu }\text{d}x_{\nu}}=-mc\int
+\eta^{\mu\nu}u^{\nu }\text{d}\delta x^{\mu}\sim \int
+\frac{\text{d}p_{\mu}}{\text{d}\tau} \delta x^{\mu}\text{d}\tau
+\]</span></p></li>
+<li></li>
+<li><p>相互作用项: <span class="math display">\[
+\delta S_i=\int \delta A_{\mu}\text{d}x^{\mu}+A_{\mu}\text{d}\delta
+x^{\mu}\sim \int (\partial_{\nu}A_{\mu}-\partial_{\mu}A_{\nu})
+u^{\nu}\delta x^{\mu}\text{d}\tau
+\]</span></p></li>
+<li></li>
+</ol>
+<ul>
+<li><p>给出 <span class="math display">\[
+\begin{aligned}
+\boxed{\frac{\text{d}p_{\mu}}{\text{d}\tau}=qF_{\mu\nu}u^{\nu}}\end{aligned}
+\]</span></p></li>
+<li><p>若定义电磁场: <span class="math display">\[
+\vec{E}=-\nabla\phi-\frac{\partial \vec{A}}{\partial t},\quad
+\vec{B}=\nabla\times\vec{A}
+\]</span> 则协变方程的<span class="math inline">\(0\)</span>分量给出
+<span class="math display">\[
+\frac{\text{d}E}{\text{d}t}=q\vec{E}\cdot\vec{v}
+\]</span> <span class="math inline">\(1\sim 3\)</span>分量给出 <span
+class="math display">\[
+\frac{\text{d}\vec{p}}{\text{d}t}=q(\vec{E}+\vec{v}\times\vec{B})
+\]</span></p></li>
+<li><p>电磁场张量 <span class="math display">\[
+F_{\mu\nu}:=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}
+\]</span> 为<strong>电磁场张量</strong>, 是一个反对称张量.
+用电场和磁场的分量写出为 <span class="math display">\[
+(F_{\mu\nu})=\begin{bmatrix} 0 &amp; E_1/c &amp; E_2/c &amp; E_3/c
+\\-E_1/c &amp;0 &amp; -B_3 &amp;B_2 \\ -E_2/c &amp; B_3 &amp; 0
+&amp;-B_1 \\ -E_3/c  &amp; -B_2 &amp; B_1 &amp;0 \end{bmatrix}
+\]</span></p>
+<ul>
+<li>有用的性质. <span class="math display">\[
+F_{\mu\nu}F^{\mu\nu}=\frac{E^2}{c^2}-B^2
+\]</span></li>
+</ul></li>
+</ul></li>
+<li><p>源与场的相互作用项. <span class="math display">\[
+q=\int \text{d}^3 x q \delta (\vec{x}-\vec{x}&#39;)
+\]</span> 则<span class="math inline">\(S_i\)</span>可以写成 <span
+class="math display">\[
+S=-\int\text{d}^3 x q\delta(\vec{x}-\vec{x}&#39;)
+A_{\mu}\frac{\text{d}x^{\mu}}{\text{d}ct}\text{d}ct
+\]</span> 其中<span
+class="math inline">\(q\delta(\vec{x}-\vec{x}&#39;)\)</span>本质上是空间上的电荷分布,
+而第二项为速度, 合起来就变成4-电流, 此时 <span class="math display">\[
+\begin{aligned}
+\boxed{S_i=\int -\frac{1}{c}A_{\mu}j^{\mu}\text{d}\Omega}
+\end{aligned}
+\]</span></p></li>
+</ul>
+<h2 id="三-电磁场">三 电磁场</h2>
+<h3 id="规范与规范对称">规范与规范对称</h3>
+<ul>
+<li><p>电磁场的规范对称性是指系统在如下变换下的不变性 <span
+class="math display">\[
+A^{\mu}\to A^{\mu}+\partial^{\mu}f
+\]</span></p>
+<ul>
+<li><span class="math inline">\(F&#39;_{\mu\nu}=F_{\mu\nu}\)</span></li>
+<li><span class="math inline">\(\delta S&#39;=\delta S\)</span>.</li>
+</ul></li>
+<li><p>规范对称性提供了<span
+class="math inline">\(A^{\mu}\)</span>选择上的自由度.</p>
+<ul>
+<li><p>Coulomb规范: <span class="math display">\[
+\nabla\cdot\vec{A}=0
+\]</span></p></li>
+<li><p>Lorenz规范: <span class="math display">\[
+\partial_{\mu}A^{\mu}=0
+\]</span></p></li>
+</ul></li>
+</ul>
+<h3 id="自由电磁场的lagrangian-density">自由电磁场的Lagrangian
+Density</h3>
+<ul>
+<li><p>几个要求</p>
+<ol type="1">
+<li><p>4-scalar.</p></li>
+<li><p>关于<span
+class="math inline">\(A^{\mu}\)</span>线性(电磁场满足叠加原理).</p></li>
+<li><p>满足规范对称性.</p></li>
+</ol></li>
+<li><p>一个可行的构造是 <span class="math display">\[
+F_{\mu\nu}F^{\mu\nu}
+\]</span></p></li>
+<li><p>Lagrangian Density <span class="math display">\[
+\mathcal{L}=-\frac{1}{4\mu_0 c}F_{\mu\nu}F^{\mu\nu}
+\]</span></p></li>
+</ul>
+<h3 id="自由电磁场的场方程">自由电磁场的场方程</h3>
+<ul>
+<li><p>具体展开Lagrangian Density: <span class="math display">\[
+\mathcal{L}=-\frac{1}{2\mu_0c}(\partial_{\alpha}A_{\beta}\partial^{\alpha}A^{\beta}-\partial_{\beta}A_{\alpha}\partial^{\alpha}A^{\beta})
+\]</span></p></li>
+<li><p>利用: <span class="math display">\[
+\partial_{\alpha}A_{\beta}=\delta_{\alpha}^{\mu}\eta_{\beta\nu}\partial_{\mu}A^{\nu}
+\]</span> 有 <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial
+(\partial_{\mu}A^{\nu})}=-\frac{1}{\mu_0
+c}(\partial^{\mu}A_{\nu}-\partial_{\nu}A^{\mu})=-\frac{1}{\mu_0
+c}{F^{\mu}}_{\nu}
+\]</span></p></li>
+<li><p>Lagrange方程给出 <span class="math display">\[
+\begin{aligned}
+\boxed{\partial_{\mu}{F^{\mu}}_{\nu}=0}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>利用Lorenz规范可以给出 <span class="math display">\[
+\partial_{\mu}\partial^{\mu}A_{\nu}=0
+\]</span> 即<span
+class="math inline">\(A^{\mu}\)</span>的所有分量均满足波动方程.</li>
+</ul></li>
+</ul>
+<h3 id="含源的电磁场方程">含源的电磁场方程</h3>
+<ul>
+<li><p>相比不含源多了 <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial A^{\nu}}=-\frac{1}{c}j_{\nu}
+\]</span> 带回得到 <span class="math display">\[
+\begin{aligned}
+\boxed{\partial_{\mu}{F^{\mu}}_{\nu}=\mu_0 j_{\nu}}
+\end{aligned}
+\]</span></p></li>
+<li><p>Maxwell方程 <span class="math display">\[
+\nabla\cdot\vec{E}=\rho/\epsilon_0,\quad
+\nabla\times\vec{B}=\mu_0\vec{j}+\frac{1}{c^2}\frac{\partial
+\vec{E}}{\partial t}
+\]</span></p>
+<ul>
+<li>Maxwell剩下两个方程可以由<span
+class="math inline">\(\vec{E},\vec{B}\)</span>的定义给出, 或利用恒等式
+<span class="math display">\[
+\partial_{\alpha}F_{\beta\gamma}+\partial_{\beta}F_{\gamma\alpha}+\partial_{\gamma}F_{\alpha\beta}=0
+\]</span></li>
+</ul></li>
+</ul>
+<h2 id="四-对称性与守恒律">四 对称性与守恒律</h2>
+<h3 id="自由电磁场的能动量">自由电磁场的能动量</h3>
+<ul>
+<li><p>诺特定理指出, 在时空平移对称下, 给出能动张量守恒: <span
+class="math display">\[
+{\mathcal{T}^{\mu}}_{\nu}=\frac{\partial \mathcal{L}}{\partial
+(\partial_\mu
+A^{\alpha})}\partial_{\nu}A^{\alpha}-\mathcal{L}\delta^{\mu}_{\nu}
+\]</span></p></li>
+<li><p>具体计算自由电磁场的能动张量(这里舍去<span
+class="math inline">\(1/c\)</span>, 因为具有物理意义的Lagrangian
+Density没有这个系数): <span class="math display">\[
+\begin{aligned}
+{\mathcal{T}^{\mu}}_{\nu}=-\frac{1}{\mu_0}{F^{\mu}}_{\alpha}\partial_{\nu
+}A^{\alpha}-\frac{1}{2\mu_0}\left(\frac{E^2}{c^2}-B^2
+\right)\delta^{\mu}_{\nu}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p>第一项并不对称, 考虑将其对称化: <span class="math display">\[
+{F^{\mu}}_{\alpha}\partial_{\nu
+}A^{\alpha}={F^{\mu}}_{\alpha}{F_{\nu}}^{\alpha}+\partial^{\alpha}({F^{\mu}}_{\alpha}A_{\nu})-A_{\nu}\partial^{\alpha}{F^{\mu}}_{\alpha}={F^{\mu}}_{\alpha}{F_{\nu}}^{\alpha}+\partial^{\alpha}({F^{\mu}}_{\alpha}A_{\nu})
+\]</span> 因为<span class="math inline">\(F^{\mu\nu}\)</span>是反对称的,
+因此恒有 <span class="math display">\[
+\partial_{\mu}\partial^{\alpha}({F^{\mu}}_{\alpha}A_{\nu})=0
+\]</span> 因此可以将这一项略去而不改变守恒性.</p></li>
+<li><p>带回得到 <span class="math display">\[
+\begin{aligned}
+{\mathcal{T}^{\mu}}_{\nu}=\frac{1}{\mu_0}F^{\mu\alpha}F_{\nu\alpha}-\frac{1}{2\mu_0}\left(\frac{E^2}{c^2}-B^2
+\right)\delta^{\mu}_{\nu}
+\end{aligned}
+\]</span></p></li>
+<li><p>分量</p>
+<ul>
+<li><p>能量守恒 <span class="math display">\[
+\begin{aligned}
+\mathcal{T}^{00}&amp;=\frac{1}{\mu_0}F^{0\alpha}F_{0
+\alpha}-\frac{1}{2\mu_0}\left(\frac{E^2}{c^2}-B^2 \right)\\
+&amp;=\frac{1}{2}\epsilon_0E^2+\frac{1}{2\mu_0}B^2 \quad \text{Energy
+Density}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathcal{T}^{0i}=\frac{1}{\mu_0}F^{0\alpha}F_{i
+\alpha}=\left(\frac{1}{\mu_0}\vec{E}\times\vec{B} \right)^i\\
+&amp;\text{Poynting Vector}
+\end{aligned}
+\]</span></p></li>
+<li><p>动量守恒 <span class="math display">\[
+\mathcal{T}^{i0}=(\frac{1}{\mu_0}\frac{1}{c^2}\vec{E}\times\vec{B})^i=\vec{g}^i
+\quad \text{Momentum Density}
+\]</span></p></li>
+<li><p>动量张量 <span class="math display">\[
+\mathcal{T}^{ij}=-\epsilon_0E_iE_j-\frac{1}{\mu_0}B_iB_j+\omega_{\text{E.M.}}\delta_{ij}
+\]</span> 为负的Maxwell应力张量</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="含源情况">含源情况</h3>
+<ul>
+<li><p>只需要改写Lagrangian Density的项和利用电磁场方程化简的项: <span
+class="math display">\[
+{\mathcal{T}^{\mu}}_{\nu}=-\frac{1}{\mu_0}F^{\mu\alpha}F_{\nu\alpha}-\frac{1}{2\mu_0}\left(\frac{E^2}{c^2}-B^2
+\right)\delta^{\mu}_{\nu}-j^{\mu}A_{\nu}+j_{\alpha}A^{\alpha}\delta^{\mu}_{\nu}
+\]</span> 考虑源贡献的两项: <span class="math display">\[
+\begin{aligned}
+&amp;\partial_{\mu}(j_{\alpha}A^{\alpha}\delta^{\mu}_{\nu}-j^{\mu}A_{\nu})\\
+&amp;=\partial_{\nu}j_{\alpha}A^{\alpha}-j^{\mu}\partial_{\mu}A_{\nu}\\
+&amp;=F_{\nu\mu}j^{\mu}+A_{\mu}\partial_{\nu}j^{\mu}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p>上述结果比我们所期待的多出了一项<span
+class="math inline">\(A_{\mu}\partial_{\nu}j^{\mu}\)</span>,
+原因是含源的电磁场本身由于给定了源的分布而不再具有时空对称性,
+系统不再满足能动量守恒. 但我们可以仿照Noether定理推导的过程,
+假设一个时空平移变换的过程, 得到新的Lagrangian Density和<span
+class="math inline">\(S&#39;\)</span>. 虽然此时不再有<span
+class="math inline">\(S&#39;=S\)</span>,
+但是由于Lagrangian的形式没有发生变化, 因此有<span
+class="math inline">\(\delta(S&#39;-S)=0\)</span>仍然成立.
+具体计算时前部分和Noether定理完全一致, 但考虑到源随时空平移的变化而变化,
+在计算Lagrangian Density时会多出一项: <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial j^{\mu}}\partial_{\nu}j^{\mu}\Delta
+x^{\nu}
+\]</span> 对比发现这一项就是前式中多出的一项. 因此有 <span
+class="math display">\[
+\begin{aligned}
+\boxed{\partial_{\mu}{\mathcal{T}^{\mu}}_{\nu}=-F_{\nu\mu}j^{\mu}}
+\end{aligned}
+\]</span></p></li>
+<li><p>容易验证分量形式: <span class="math display">\[
+\frac{\partial \omega_{\text{E.M.}}}{\partial
+t}+\nabla\cdot\vec{S}=-\vec{E}\cdot\vec{j}
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial \vec{g}}{\partial t}+\nabla\cdot
+\mathbf{G}=-\rho\vec{E}-\vec{j}\times\vec{B}
+\]</span></p></li>
+</ul></li>
+<li></li>
+</ul>
+<h3 id="规范对称性">规范对称性</h3>
+<ul>
+<li><p>系统满足规范对称性 <span class="math display">\[
+0=\Delta S=\int \text{d}\Omega \frac{1}{c}(\partial_{\mu} f
+)j^{\mu},\quad A^{\mu}\to A^{\mu}+\partial^{\mu}f
+\]</span> 分部积分得到 <span class="math display">\[
+\boxed{\partial_{\mu}j^{\mu}=0}
+\]</span> 即电荷守恒.</p></li>
+<li><p>问题: 事实上,
+规范对称性实际上只是一种数学描述的冗余而不含有任何物理含义,
+因此严格意义上讲不算一种对称性.
+<strong>对于这个问题存在一些争论</strong>.</p></li>
+</ul>
+<blockquote>
+<p>A-B effect</p>
+<p>Aharonov和Bohm于1959年设计实验说明,
+物质波的非局域性导致其只能感受到电磁场的积分结果, 因此用<span
+class="math inline">\(A^{\mu}\)</span>的描述更加自然. (仅此而已,
+不能说明<span class="math inline">\(A^{\mu}\)</span>和<span
+class="math inline">\(E,B\)</span>哪一个更本质)</p>
+<p><img src="./images/Aharonov-Bohm_effect.jpg" alt="作者 Sebastian Schmittner - 自己的作品，CC BY-SA 3.0，https://commons.wikimedia.org/w/index.php?curid=15300586" style="zoom:33%;" /></p>
+<p>实验具体内容为电子的双缝干涉, 中间加一块磁场, 根据量子力学,
+两列电子会产生额外相位差 <span class="math display">\[
+\Delta \phi=\frac{e}{\hbar}\oint \vec{A}\cdot\text{d}\vec{l}
+\]</span> 从而使电子双缝干涉图样产生一个平移.
+实际上在电子运动范围内不存在磁场. 从而是<span
+class="math inline">\(\vec{A}\)</span>影响了电子的行为.</p>
+</blockquote>
+<ul>
+<li><p>More about Gauge Symmetry</p>
+<ul>
+<li><p>一般的规范对称性是指复标量场在变换下 <span
+class="math display">\[
+\phi \to e^{ie\alpha}\phi
+\]</span> 下不变的性质. 即<span
+class="math inline">\(\text{U}(1)\)</span>不变性.
+满足这一点的一个Lagrangian Density 为 <span class="math display">\[
+\mathcal{L}=-\partial_{\mu}\bar{\phi}\partial^{\mu}\phi-u(\phi\bar{\phi})
+\]</span> 取<span class="math inline">\(\alpha\to
+0\)</span>的导数就得到对应的守恒流 <span class="math display">\[
+j^{\mu}=ie(\phi\partial^{\mu}\bar{\phi}-\bar{\phi}\partial^{\mu}\phi)
+\]</span></p></li>
+<li><p>若将相位局域化: <span class="math inline">\(\alpha\to
+\alpha(x^{\mu})\)</span>, 则变换下<span class="math inline">\(\Delta
+S\)</span>会多出 <span class="math display">\[
+\int \text{d}\Omega j^{\mu}\partial_{\mu}\alpha
+\]</span> 项. 为此一个好的办法是引入一个矢量场<span
+class="math inline">\(A^{\mu}\)</span>, 使其在规范变换下满足 <span
+class="math display">\[
+A^{\mu}\to A^{\mu}+\partial^{\mu}\alpha
+\]</span> 并且为Lagrangian Density引入耦合项 <span
+class="math display">\[
+j^{\mu}A_{\mu}
+\]</span> 就可以抵消掉新产生的作用量的变化项.</p></li>
+<li><p>再考虑<span class="math inline">\(j^{\mu}\)</span>的变化.
+注意到在规范变换下 <span class="math display">\[
+(\partial_{\mu}-ieA_{\mu})\phi\to
+e^{ie\alpha}(\partial_{\mu}-ieA_{\mu})\phi
+\]</span> 因此可以引入新的协变导数算符: <span class="math display">\[
+D_{\mu}:=\partial_{\mu}-ieA_{\mu}
+\]</span> 就可以找到的新的守衡流 <span class="math display">\[
+J^{\mu}=ie(\phi\overline{D_{\mu}\phi}-\bar{\phi}D_{\mu}\phi)
+\]</span></p></li>
+</ul></li>
+<li><p>上述内容中表明,
+全局(global)的规范对称和局域(local)的规范对称是有本质区别的.
+一般认为<strong>global的规范对称是一种真实的物理对称</strong>(对此的物理解释是,
+只有电荷守恒, <span
+class="math inline">\(A\)</span>在规范变换下体系的能量才不会有区别.
+如果电荷不守恒, 凭空产生电荷所需的能量就与所选取的规范有关.),
+而局域性的规范对称只是数学上的冗余,
+规范场论的描述是因为这样数学上的冗余带来的计算上的方便. 事实上,
+在最初的推导中, 我们没有使用Noether定理的结论: 场变换下 <span
+class="math display">\[
+\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}A^{\nu})}\delta
+A^{\nu}
+\]</span> 守恒. 带入就是 <span class="math display">\[
+{F^{\mu}}_{\nu}\partial^{\nu}f\sim
+-f\partial^{\nu}{F^{\mu}}_{\nu}\sim  fj^{\mu}
+\]</span> 若要由此推出电荷守恒, 就要求规范势<span
+class="math inline">\(f\)</span>是一个常数, 即global的.</p></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%B2%E4%B9%89/" rel="tag"># 讲义</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/01/20/%E5%88%86%E6%9E%90%E5%8A%9B%E5%AD%A6%E8%AE%B2%E4%B9%89/" rel="prev" title="分析力学讲义">
+      <i class="fa fa-chevron-left"></i> 分析力学讲义
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E5%88%86%E6%9E%90%E5%8A%9B%E5%AD%A6%E5%88%B0%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">从分析力学到电动力学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E4%BD%93%E7%B3%BB"><span class="nav-number">1.0.1.</span> <span class="nav-text">离散体系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E4%BD%93%E7%B3%BB"><span class="nav-number">1.0.2.</span> <span class="nav-text">连续体系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E6%BA%90"><span class="nav-number">1.1.</span> <span class="nav-text">二 源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%80%A7%E6%96%B9%E7%A8%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">连续性方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E9%A1%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">作用量的相互作用项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">三 电磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E4%B8%8E%E8%A7%84%E8%8C%83%E5%AF%B9%E7%A7%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">规范与规范对称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%94%B1%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84lagrangian-density"><span class="nav-number">1.2.2.</span> <span class="nav-text">自由电磁场的Lagrangian
+Density</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%94%B1%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9C%BA%E6%96%B9%E7%A8%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">自由电磁场的场方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AB%E6%BA%90%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E6%96%B9%E7%A8%8B"><span class="nav-number">1.2.4.</span> <span class="nav-text">含源的电磁场方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E5%AF%B9%E7%A7%B0%E6%80%A7%E4%B8%8E%E5%AE%88%E6%81%92%E5%BE%8B"><span class="nav-number">1.3.</span> <span class="nav-text">四 对称性与守恒律</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%94%B1%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E5%8A%A8%E9%87%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">自由电磁场的能动量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AB%E6%BA%90%E6%83%85%E5%86%B5"><span class="nav-number">1.3.2.</span> <span class="nav-text">含源情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">1.3.3.</span> <span class="nav-text">规范对称性</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KunziBa"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">KunziBa</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="/bkz2007@126.com" title="E-Mail → bkz2007@126.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/bkz-65" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;bkz-65" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fas fa-cloud"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KunziBa</span>
+</div>
+
+
+    <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+ 
+
+        
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,0' opacity='1' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>
