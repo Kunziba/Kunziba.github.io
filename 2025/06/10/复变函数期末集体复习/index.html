@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="2025年6月8日，物理四字班复变函数期末集体复习讲义.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复变函数期末集体复习">
+<meta property="og:url" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="KunziBa 的个人主页">
+<meta property="og:description" content="2025年6月8日，物理四字班复变函数期末集体复习讲义.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig1.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig2.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig3.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig4.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig5.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig6.png">
+<meta property="og:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig7.png">
+<meta property="article:published_time" content="2025-06-10T03:30:32.000Z">
+<meta property="article:modified_time" content="2025-06-10T03:44:12.555Z">
+<meta property="article:author" content="KunziBa">
+<meta property="article:tag" content="讲义">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/fig1.png">
+
+<link rel="canonical" href="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>复变函数期末集体复习 | KunziBa 的个人主页</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KunziBa 的个人主页</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/About-Me/index.html" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="KunziBa">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KunziBa 的个人主页">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          复变函数期末集体复习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-06-10 11:30:32 / 修改时间：11:44:12" itemprop="dateCreated datePublished" datetime="2025-06-10T11:30:32+08:00">2025-06-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%B2%E4%B9%89%E5%92%8C%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">讲义和笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>23 分钟</span>
+            </span>
+            <div class="post-description">2025年6月8日，物理四字班复变函数期末集体复习讲义.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="复变函数期末集体复习">复变函数期末集体复习</h1>
+<h2 id="解析函数">解析函数</h2>
+<h3 id="知识梳理">知识梳理</h3>
+<ul>
+<li><p>复变导数的定义为: <span class="math display">\[
+w&#39;(z)=\lim_{\Delta z\to 0}\frac{w(z+\Delta z)-w(z)}{\Delta z},
+\]</span> 这一定义要求<span class="math inline">\(\Delta
+z\)</span>以任意方式趋于<span
+class="math inline">\(0\)</span>时极限均存在且相等.</p></li>
+<li><p>Cauchy-Riemann方程: <span class="math display">\[
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y};\quad
+\frac{\partial u}{\partial y}=-\frac{\partial u}{\partial x}.
+\]</span></p>
+<ul>
+<li><p>等价表示: <span class="math display">\[
+\frac{\partial w}{\partial \bar{z}}=0.
+\]</span> 这一表示中需要一个判断解析性的重要换元: <span
+class="math display">\[
+x=\frac{z+\bar{z}}{2};\; y=\frac{z-\bar{z}}{2i}.
+\]</span></p></li>
+<li><p>重要推论: <span class="math inline">\(u,v\)</span>都是调和函数.
+相应地, 若<span class="math inline">\(u\)</span>是调和函数,
+那么其一定可以作为解析函数的实部. 这一点只需要判断<span
+class="math inline">\(v\)</span>是否存在. 考虑 <span
+class="math display">\[
+\omega=-\frac{\partial u}{\partial y}\text{d}x+\frac{\partial
+u}{\partial x}\text{d}y,
+\]</span> 容易验证<span class="math inline">\(\text{d}\omega=0\)</span>,
+即<span class="math inline">\(\omega\)</span>是闭形式. 由Poincare引理,
+<span class="math inline">\(\omega\)</span>也一定是恰当形式,
+即在一定范围上存在 <span class="math display">\[
+\omega=\text{d}v.
+\]</span> <span
+class="math inline">\(v\)</span>就是我们寻找的虚部.</p></li>
+</ul></li>
+<li><p>解析函数: <span class="math inline">\(w\)</span>在<span
+class="math inline">\(z_0\)</span>处可导, 则<span
+class="math inline">\(w\)</span>在<span
+class="math inline">\(z_0\)</span>解析. 这一定义可以推广到区域上.</p>
+<ul>
+<li>可导的充分必要条件: <span
+class="math inline">\(u,v\)</span>的偏导数存在且连续,
+且满足C-R条件.</li>
+</ul></li>
+</ul>
+<h3 id="例题">例题</h3>
+<ol type="1">
+<li><p>已知函数<span class="math inline">\(u(x,y)\)</span>和<span
+class="math inline">\(v(x,y)\)</span>分别为解析函数<span
+class="math inline">\(w_1\)</span>的实部与虚部, 则<span
+class="math inline">\(u^2\)</span>和<span
+class="math inline">\(uv\)</span>能否作解析函数<span
+class="math inline">\(w_2\)</span>的实部? 为什么? 如果可以, 求出<span
+class="math inline">\(w_2\)</span>的表达式(可以用<span
+class="math inline">\(w_1\)</span>, <span
+class="math inline">\(u\)</span>, <span
+class="math inline">\(v\)</span>和常数表示).</p>
+<blockquote>
+<p>解: 验证<span class="math inline">\(u^2\)</span>是否为调和函数: <span
+class="math display">\[
+\begin{aligned}
+\Delta u^2=\nabla \cdot (2u \nabla u)=2(\nabla u)^2+2u\Delta u=2(\nabla
+u)^2,
+\end{aligned}
+\]</span> 对于一般的<span class="math inline">\(u\)</span>右侧不为零.
+若<span class="math inline">\(u\)</span>为一个常数, 那么<span
+class="math inline">\(u^2\)</span>将为调和函数. 此时<span
+class="math inline">\(w_2\)</span>就是一个复常数.</p>
+<p>再验证<span class="math inline">\(uv\)</span>: <span
+class="math display">\[
+\Delta (uv)=\nabla \cdot(v\nabla u+u\nabla v)=2\nabla v\cdot \nabla u,
+\]</span> 而根据<span class="math inline">\(u,v\)</span>的正交性,
+右侧点乘为零. <span
+class="math inline">\(uv\)</span>可作某解析函数的实部.
+这一函数的虚部满足: <span class="math display">\[
+\begin{aligned}
+\text{d}v_2&amp;=-\left(v\frac{\partial u}{\partial y}+u\frac{\partial
+v}{\partial y} \right)\text{d}x+\left(v\frac{\partial u}{\partial
+x}+u\frac{\partial v}{\partial x} \right)\text{d}y\\
+&amp;=-\left(-v\frac{\partial v}{\partial x}+u\frac{\partial u}{\partial
+x} \right)\text{d}x+\left(v\frac{\partial v}{\partial y}-u\frac{\partial
+u}{\partial y} \right)\text{d}y\\
+&amp;=\text{d}\frac{1}2 \left(v^2-u^2\right),
+\end{aligned}
+\]</span> 于是 <span class="math display">\[
+w_2=uv +\frac{i}{2}(v^2-u^2)+iC=\frac{w_1^2}{2i}+iC.
+\]</span></p>
+</blockquote></li>
+<li><p>设<span class="math inline">\(u(x,y)\)</span>和<span
+class="math inline">\(v(x,y)\)</span>分别是解析函数<span
+class="math inline">\(w_1\)</span>的实部和虚部, 且<span
+class="math inline">\(u\)</span>和<span
+class="math inline">\(v\)</span>不为常函数.</p>
+<ol type="1">
+<li><span class="math inline">\(u^n −v^n\)</span> (<span
+class="math inline">\(n\)</span>为自然数)
+在什么情况下可以作为解析函数<span
+class="math inline">\(w_2\)</span>的实部？</li>
+<li>在上一问的条件下, 导出<span
+class="math inline">\(w_2\)</span>的表达式(用<span
+class="math inline">\(w_1\)</span>以及常数表示即可).</li>
+</ol>
+<blockquote>
+<p>解:</p>
+<ol type="1">
+<li>验证<span class="math inline">\(u^n-v^n\)</span>是否为调和函数:</li>
+</ol>
+<p><span class="math display">\[
+\Delta (u^n-v^n)=n(n-1)(\nabla u)^2\left( u^{n-2}-v^{n-2} \right).
+\]</span></p>
+<p>而显然<span class="math inline">\(u\neq v\)</span>, 于是只能有<span
+class="math inline">\(n=0,1\)</span>.</p>
+<ol start="2" type="1">
+<li>对<span class="math inline">\(n=0\)</span>, <span
+class="math inline">\(w_2\)</span>就为一纯虚常数; 对<span
+class="math inline">\(n=1\)</span>,</li>
+</ol>
+<p><span class="math display">\[
+\text{d}v_2=\text{d}(u+v),
+\]</span></p>
+<p>所以 <span class="math display">\[
+w_2=u-v+i(u+v)+iC=(1+i)w_1+iC.
+\]</span></p>
+</blockquote></li>
+<li><p>设<span class="math inline">\(x,y\)</span>为实数, <span
+class="math inline">\(w(z)=u(x,y)+iv(x,y)\)</span>为解析函数, <span
+class="math inline">\(u(x,y) = x^3+y^3+ax^2y+ bxy^2 + x^2 +cxy
++dy^2\)</span>, 求出<span
+class="math inline">\(u(x,y)\)</span>可做解析函数实部的条件,
+并求出解析函数<span class="math inline">\(w(z)\)</span>的表达式, <span
+class="math inline">\(z =x+iy\)</span>.</p>
+<blockquote>
+<p>解: 计算: <span class="math display">\[
+\Delta u=6x+2ay+2+6y+2bx+2d=0.
+\]</span> 得到<span class="math inline">\(b=-3,a=-3,d=-1\)</span>. 即
+<span class="math display">\[
+u=x^3+y^3-3x^2y-3xy^2+x^2+cxy-y^2.
+\]</span> 此时: <span class="math display">\[
+\frac{\partial v}{\partial x}=-3y^2+3x^2+6xy-cx+2y;\; \frac{\partial
+v}{\partial y}=3x^2-6xy-3y^2+cy+2x\\
+\text{d}v=\text{d}(x^3-y^3+2xy+3yx^2-3xy^2),
+\]</span> 得到 <span class="math display">\[
+w(z)=(1+i)z^3+\left(1+\frac{c}{2i}\right)z^2+iC.
+\]</span></p>
+</blockquote></li>
+</ol>
+<h2 id="cauchy积分公式">Cauchy积分公式</h2>
+<ul>
+<li><p>单连通区域上的Cauchy定理: 若<span
+class="math inline">\(f\)</span>在单连通区域上的<span
+class="math inline">\(D\)</span>上解析, 则 <span class="math display">\[
+\oint_{\partial D}f(z)\text{d}z=0.
+\]</span> 这一点可以由C-R条件和Green公式得到.</p></li>
+<li><p>复连通区域上的Cauchy定理: <span
+class="math inline">\(f\)</span>在复连通区域上单值解析, 则 <span
+class="math display">\[
+\oint_{\partial D^+}f(z)\text{d}z=0.
+\]</span> 其中<span class="math inline">\(\partial
+D\)</span>包含了这一复连通区域的所有边界. 改写就得到: <span
+class="math display">\[
+\oint_{C}f(z)\text{d}z=\sum_i \oint_{C_i}f(z)\text{d}z.
+\]</span></p></li>
+<li><p>Cauchy积分公式: <span
+class="math inline">\(f\)</span>在单连通区域<span
+class="math inline">\(D\)</span>上解析, <span class="math inline">\(a\in
+D\)</span>, 则对环路<span class="math inline">\(C\subset D\)</span>有
+<span class="math display">\[
+\frac{1}{2\pi i} \oint_C \frac{f(z)}{z-a}\text{d}z=f(a).
+\]</span></p>
+<ul>
+<li>由此可以得到高阶导数公式: <span class="math display">\[
+f^{(p)}(a)=\frac{p!}{2\pi i}\oint_{C}\frac{f(z)}{(z-a)^{p+1}}\text{d}z.
+\]</span> 这说明: 若<span class="math inline">\(f\)</span>可导,
+则其各阶导数均存在.</li>
+</ul></li>
+<li><p>Cauchy型积分: 在一条分段光滑的曲线<span
+class="math inline">\(C\)</span>上, <span
+class="math inline">\(\phi(z)\)</span>连续. 则由如下定义的<span
+class="math inline">\(f(z)\)</span>解析, 且各阶导数均存在: <span
+class="math display">\[
+f(z)=\frac{1}{2\pi i}\int_C \frac{\phi(\zeta)}{\zeta-z}\text{d}\zeta,\;
+f^{(p)}(z)=\frac{p!}{2\pi i}\int_C
+\frac{\phi(\zeta)}{(\zeta-z)^{n+1}}\text{d}\zeta.
+\]</span> 需要注意的是, <span class="math inline">\(f(z)\neq
+\phi(z)\)</span>, 这是由于积分曲线可以不闭合, 且<span
+class="math inline">\(\phi(z)\)</span>不一定解析.</p></li>
+</ul>
+<h3 id="例题-1">例题</h3>
+<ol type="1">
+<li><p>求环路积分 <span class="math inline">\(\oint_{|ζ|=1} \frac{\Re
+\zeta}{ \zeta−z}d\zeta, |z| \neq1\)</span>的值.</p>
+<blockquote>
+<p>解. 环路上有<span class="math inline">\(\Re
+\zeta=\frac{1}{2}(\zeta+1/\zeta)\)</span>, 所以有 <span
+class="math display">\[
+\oint_{|\zeta|=1} \frac{\Re \zeta}{
+\zeta−z}d\zeta=\frac{1}{2}\oint_{|\zeta|=1}\frac{\zeta}{\zeta-z}\text{d}\zeta+\frac{1}{2}\oint_{|\zeta|=1}\frac{1}{(\zeta-z)\zeta}\text{d}\zeta,
+\]</span> 在<span class="math inline">\(|z|&gt;1\)</span>时,
+第一项积分为零, 第二项积分为<span class="math inline">\(-\pi i \cdot
+1/z\)</span>.</p>
+<p>于是 <span class="math display">\[
+I=-\frac{i\pi }{z},\quad |z|&gt;1.
+\]</span> 而在<span class="math inline">\(|z|&lt;1\)</span>时,
+第一项积分为<span class="math inline">\(i\pi z\)</span>,
+第二项积分改写为 <span class="math display">\[
+\frac{1}{2z}\oint\left(
+\frac{1}{\zeta-z}-\frac{1}{\zeta}\right)\text{d}\zeta=0,
+\]</span> 容易验证这在<span class="math inline">\(z=0\)</span>时也成立.
+于是 <span class="math display">\[
+I=\begin{cases}
+-\dfrac{i\pi }{z},\quad |z|&gt;1,\\
+i\pi z,\quad |z|&lt;1.
+\end{cases}
+\]</span></p>
+</blockquote></li>
+<li><p>设<span
+class="math inline">\(w(z)=u(x,y)+iv(x,y)\)</span>于复平面上半平面与实轴上均单值解析,
+且当<span class="math inline">\(z\)</span>于上半空间趋于无穷远点时,
+<span class="math inline">\(w(z)\)</span>一致地趋向于<span
+class="math inline">\(0\)</span>, 求证: <span class="math display">\[
+u(x,y)=\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{yf(\xi)}{(\xi-x)^2+y^2}\text{d}\xi;
+\\
+v(x,y)=\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{(x-\xi)f(\xi)}{(\xi-x)^2+y^2}\text{d}\xi.
+\]</span> 其中<span class="math inline">\(f(\xi) = u(\xi,0)\)</span>,
+这被称为上半空间的Poisson公式.</p>
+<blockquote>
+<p>解: 考虑如图围道.</p>
+<p><img src="./复变函数期末集体复习/fig1.png" style="zoom:25%;" /></p>
+<p>根据这一围道上的Cauchy积分公式: <span class="math display">\[
+w(z)=\frac{1}{2\pi i} \int_{-R}^{R}\frac{w(\xi)}{\xi -z}\text{d}\xi
++\frac{1}{2\pi i} \int_{C_R},
+\]</span> 而在<span class="math inline">\(R\to +\infty\)</span>时,
+根据大圆弧引理, <span class="math inline">\(\int_{C_R}\to 0\)</span>.
+于是 <span class="math display">\[
+w(z)=\frac{1}{2\pi
+i}\int_{-\infty}^{\infty}\frac{w(\xi)}{\xi-z}\text{d}\xi=\frac{1}{2\pi
+i}\int_{-\infty}^{\infty}\frac{(\xi-x+iy)(u+iv)}{(\xi-x)^2+y^2}\text{d}\xi.
+\]</span> 再考虑如图<span class="math inline">\(z&#39;\)</span>点的积分.
+此时<span class="math inline">\(w(\xi)/(\xi
+-z)\)</span>在上半平面上解析, 因此积分为零. 而积分可以化为: <span
+class="math display">\[
+\frac{1}{2\pi i}\int_{-\infty}^{\infty}\frac{(\xi -x-iy)(u+iv)}{(\xi
+-x)^2+y^2}\text{d}\xi=0.
+\]</span> 相加得到 <span class="math display">\[
+w(z)=\frac{1}{\pi i}\int_{-\infty}^{\infty}\frac{(\xi
+-x)(u+iv)}{(\xi-x)^2+y^2}\text{d}\xi=\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{(x-\xi)u}{(\xi-x)^2+y^2}\text{d}\xi
++\frac{i}{\pi}\int_{-\infty}^{\infty}\frac{(x-\xi
+)v}{(\xi-x)^2+y^2}\text{d}\xi,
+\]</span> 对比虚部就得到了第二个Poisson公式. 相减得到 <span
+class="math display">\[
+w(z)=\frac{1}{\pi }\int_{-\infty}^{\infty}\frac{y(u+iv)}{(\xi
+-x)^2+y^2}\text{d}\xi,
+\]</span> 对比实部就得到了第一个Poisson公式.</p>
+</blockquote></li>
+<li><p>计算围道积分 <span class="math display">\[
+\oint_{|\zeta|=1}\frac{\Re \zeta }{(\zeta-z)^2}\text{d}\zeta,\; |z|\neq
+1.
+\]</span></p>
+<blockquote>
+<p>解: 仍然是类似的技巧: <span class="math display">\[
+I=i\pi \cdot\frac{1}{2\pi i}
+\oint_{|\zeta|=1}\frac{\zeta}{(\zeta-z)^2}\text{d}\zeta+i\pi \cdot
+\frac{1}{2\pi i
+}\oint_{|\zeta|=1}\frac{1}{\zeta(\zeta-z)^2}\text{d}\zeta.
+\]</span> 对<span class="math inline">\(|z|&gt;1\)</span>,
+第一项积分为零; 第二项为<span class="math inline">\(i\pi
+/z^2\)</span>.</p>
+<p>对<span class="math inline">\(|z|&lt;1\)</span>, 第一项积分为<span
+class="math inline">\(\zeta\)</span>在<span
+class="math inline">\(z\)</span>处的一阶导数, 为<span
+class="math inline">\(i\pi\)</span>, 而第二项为 <span
+class="math display">\[
+i\pi\frac{1}{z^2} \cdot \frac{1}{2\pi
+i}\oint_{|\zeta|=1}\left(\frac{1}{\zeta}-\frac{1}{\zeta-z}+\frac{z}{(\zeta-z)^2}
+\right)\text{d}\zeta=0,
+\]</span> 容易验证这在<span class="math inline">\(z=0\)</span>时也成立.
+综上, <span class="math display">\[
+I=\begin{cases}
+\dfrac{i\pi }{z^2},\quad |z|&gt;1;\\
+i\pi ,\quad |z|&lt;1.
+\end{cases}
+\]</span></p>
+</blockquote></li>
+</ol>
+<h2 id="多值函数和laurent展开">*多值函数和Laurent展开</h2>
+<h3 id="知识梳理-1">知识梳理</h3>
+<ul>
+<li><p>多值函数的宗量, 支点, 割线和单值分支.</p>
+<ul>
+<li>宗量: 是指幅角会引起多值性的量. 函数中<span
+class="math inline">\(\sqrt{w},\ln w\)</span>中的<span
+class="math inline">\(w\)</span>就是宗量.</li>
+<li>支点: 绕点(路径内不能有其他支点)旋转一圈, 函数值不复原的点.
+<ul>
+<li>支点的判断: 使宗量为无穷或者<span
+class="math inline">\(0\)</span>的点<strong>可能</strong>是支点.</li>
+<li>支点的性质: 支点是非孤立奇点.</li>
+</ul></li>
+<li>割线: 连接支点的线. 每一个支点都至少有一条割线与之相连.
+割线的目的是为了不能绕单一支点一圈.
+<ul>
+<li>割线上的每个点都是非孤立奇点.</li>
+</ul></li>
+<li>单值分支: 划好割线后规定某点的函数值就确定了函数的一个单值分支.
+规定好单值分支后, 多值函数就可以进行对应实函数所允许的代数运算.
+<ul>
+<li>这些代数运算本质上就是要处理<span
+class="math inline">\(\sqrt{-1},\ln(-1)\)</span>的值.</li>
+</ul></li>
+</ul></li>
+<li><p>多值函数值的求法: 已知多值函数在<span
+class="math inline">\(w_0\)</span>处的值, 求<span
+class="math inline">\(w\)</span>处的值.</p>
+<ul>
+<li><p>具体步骤:</p>
+<ol type="1">
+<li>确定宗量的模长;</li>
+<li>画割线允许的路径, 计算<span class="math inline">\(\Delta \arg
+w\)</span>. 此时宗量就是</li>
+</ol>
+<p><span class="math display">\[
+w=|w|e^{i(\arg w_0+\Delta  \arg w)},
+\]</span></p>
+<p>幅角是确定的.</p>
+<ol start="3" type="1">
+<li>带回具体计算.</li>
+</ol></li>
+<li><p>无穷远点的值.</p>
+<p><u>例</u>: 考虑函数 <span class="math display">\[
+f(z)=\ln\frac{1+z}{1-z}, f(0)=0.
+\]</span> 割线为<span class="math inline">\(-1\)</span>到<span
+class="math inline">\(1\)</span>的下半圆弧. 求<span
+class="math inline">\(\infty\)</span>点的值.</p>
+<blockquote>
+<p>解: 如图.</p>
+<p><img src="./复变函数期末集体复习/fig2.png" style="zoom:25%;" /></p>
+<p><span class="math inline">\(z\)</span>平面的割线对应宗量平面的割线.
+无穷远点在<span class="math inline">\(w\)</span>平面对应<span
+class="math inline">\(-1\)</span>. 因此就是要计算<span
+class="math inline">\(-1\)</span>的幅角. 考虑右侧红色路径, 容易得到<span
+class="math inline">\(-1\)</span>的幅角为<span
+class="math inline">\(\pi\)</span>. <span
+class="math inline">\(\infty\)</span>处的函数值就是<span
+class="math inline">\(i\pi\)</span>.</p>
+</blockquote></li>
+</ul></li>
+<li><p>Laurent展开:</p>
+<ul>
+<li>具有唯一性;</li>
+<li>多值函数的Laurent展开是在主值分支上的, 即当<span
+class="math inline">\(z\)</span>为实数且函数在实数域上有定义时,
+函数值与实变函数中的定义一致. 因此, 对于题目中多值函数的Laurent展开,
+要<strong>先判断题给的函数在哪一个单值分支</strong>,
+不同分支的上的级数可能相差常数或系数,
+但<strong>常数或系数对后续步骤影响很大</strong>.</li>
+<li>无穷远点的Laurent展开是<span
+class="math inline">\(1/z\)</span>的幂级数, 环域写为<span
+class="math inline">\(|z|&gt;1/R\)</span>, 其中<span
+class="math inline">\(R\)</span>是收敛半径.</li>
+</ul></li>
+<li><p>Laurent展开的求法.</p>
+<ul>
+<li><p>转化为基本公式求解: <span class="math display">\[
+e^{z}=\sum_{n=0}^{\infty}\frac{z^n}{n!};\\
+\ln(1-z)=-\sum_{n=1}^{\infty}\frac{z^n}{n};\\
+(1+z)^{\alpha}=\sum_{n=0}^{\infty}\frac{\alpha\cdots(\alpha-n+1)}{n!}z^n=\sum_{n=0}^{\infty}\begin{pmatrix}\alpha\\n
+\end{pmatrix}z^n.
+\]</span></p></li>
+<li><p>级数乘法; 待定系数法;</p></li>
+<li><p>级数除法. 这一方法大多是将函数转化为 <span
+class="math display">\[
+\frac{1}{1-\square},
+\]</span> 其中<span
+class="math inline">\(\square\)</span>可能是某个无穷级数, 那么展开为
+<span class="math display">\[
+1+\square+\square^2+\cdots.
+\]</span> 这种方法在求前<span class="math inline">\(1\sim
+2\)</span>项系数时比较方便. 但可能没有过程分.</p></li>
+</ul></li>
+</ul>
+<h3 id="例题-2">例题</h3>
+<ol type="1">
+<li><p>已知函数<span class="math inline">\(w(z) =
+z\ln^{−2}\dfrac{z+i}{z-i}\)</span>，割线为<span class="math inline">\(z
+= i\)</span>与<span class="math inline">\(z =
+−i\)</span>的连线，并规定割线右岸宗量辐角为<span
+class="math inline">\(−\pi\)</span>.</p>
+<ol type="1">
+<li>求<span class="math inline">\(w(±1)\)</span>的值;</li>
+<li>求函数在环域<span
+class="math inline">\(|z|&gt;1\)</span>的Laurent展开（写出系数非零的前五项即可）;</li>
+<li>求函数在无穷远处的留数.</li>
+</ol>
+<blockquote>
+<p>解:</p>
+<ol type="1">
+<li><p>如图:</p>
+<p><img src="./复变函数期末集体复习/fig3.png" style="zoom:25%;" /></p>
+<p><span class="math inline">\(1\)</span>处的宗量为<span
+class="math inline">\(1\cdot
+e^{i(-\pi-\frac{\pi}{4}-\frac{\pi}{4})}\)</span>, 函数值为 <span
+class="math display">\[
+w(1)=1\cdot\frac{1}{\left(\ln1\cdot e^{-i\frac{3\pi}{2}}
+\right)^2}=-\frac{4}{9\pi^2}.
+\]</span> <span class="math inline">\(-1\)</span>处的宗量为<span
+class="math inline">\(1\cdot
+e^{i(-\pi-\frac{7\pi}{4}+\frac{\pi}{4})}\)</span>, 函数值为 <span
+class="math display">\[
+w(-1)=-1\cdot\frac{1}{\left( \ln 1\cdot
+e^{-i\frac{5}{2}\pi}\right)}=\frac{4}{25\pi^2}.
+\]</span></p></li>
+<li><p>注意, 这种说法是指在<span
+class="math inline">\(\infty\)</span>点展开. 而对于<span
+class="math inline">\(\infty\)</span>点, 宗量为<span
+class="math inline">\(1\)</span>. 考虑<span
+class="math inline">\(w\)</span>平面上的割线为下图所示,
+所以宗量幅角为<span class="math inline">\(-2\pi\)</span>.</p>
+<p><img src="./复变函数期末集体复习/fig4.png" style="zoom:25%;" /></p>
+<p>所以, <span class="math inline">\(\ln
+\dfrac{z+i}{z-i}\)</span>在<span
+class="math inline">\(\infty\)</span>点就改写为 <span
+class="math display">\[
+-2\pi i +\ln (1+\frac{i}{z})-\ln (1-\frac{i}{z}),
+\]</span> 其中右侧的两个$<span class="math inline">\(均在主值分支,
+即\)</span>z=$函数值为<span class="math inline">\(0\)</span>.
+这样就可以利用基本公式得到 <span class="math display">\[
+\ln \dfrac{z+i}{z-i}=-2\pi i
+-\sum_{n=1}^{\infty}\frac{(-i)^{n}}{n}\left(\frac{1}{z}\right)^n+\sum_{n=1}^{\infty}\frac{i^n}{n}\left(\frac{1}{z}\right)^n=-2\pi
+i -\sum_{n=1}^{\infty}\frac{i^n-(-i)^n}{n}\left(\frac{1}{z} \right)^n\\
+=-2\pi i\left(1+\sum_{n=1}^{\infty}\frac{\sin\frac{n\pi}{2} }{n\pi
+}\left(\frac{1}{z} \right)^n\right).
+\]</span> 先用级数除法做一定性判断,
+显然这一函数倒数的级数不应该包含<span
+class="math inline">\(z\)</span>的正幂次项, 因此利用待定系数法. 设 <span
+class="math display">\[
+\ln^{-1}\frac{z+i}{z-i}=\sum_{k=0}^{\infty} a_k
+\left(\frac{1}{z}\right)^k,
+\]</span> 就有 <span class="math display">\[
+\frac{i}{2\pi} =\left( \sum_{n=0}^{\infty} b_n \left(\frac{1}{z}
+\right)^n  \right) \left(\sum_{k=0}^{\infty} a_k
+\left(\frac{1}{z}\right)^k\right)\\
+=\sum_{m=0}^{\infty} \left( \sum_{k=0}^m a_k b_{m-k}
+\right)\left(\frac{1}{z} \right)^m,
+\]</span> 对比得到等式(已经带入<span
+class="math inline">\(b_0=1\)</span>) <span class="math display">\[
+a_0b_0=\frac{i}{2\pi}\Rightarrow a_0=\frac{i}{2\pi} \\
+a_0b_1+a_1=0\Rightarrow a_1=-\frac{i}{2\pi^2} \\
+a_0b_2+a_1b_1+a_2=0 \Rightarrow a_2=\frac{i}{2\pi^3}\\
+a_0b_3+a_1b_2+a_2b_1+a_3=0\Rightarrow a_3=i\frac{3-\pi^2}{6\pi^4} \\
+a_0b_4+a_1b_3+a_2b_2+a_3b_1+a_4=0\Rightarrow a_4=i\frac{3−2π^2}{
+6π^5}.
+\\
+\]</span> 这样, 题目要求的级数就是 <span class="math display">\[
+z\left(a_0+\frac{a_1}{z}+\frac{a_2}{z^2}+\frac{a_3}{z^3}+\frac{a_4}{z^4}+\cdots   \right)^2\\
+=z\left(a_0^2+\frac{2a_0a_1}{z}+\frac{a_1^2+2a_0a_2}{z^2}+2\frac{a_0a_3+a_1a_2}{z^3}+\frac{a_2^2+2a_0a_4+2a_1a_3}{z^4}
++\cdots\right),
+\]</span> 得到前<span class="math inline">\(5\)</span>项系数为 <span
+class="math display">\[
+-\frac{1}{4\pi^2},-\frac{1}{2\pi^3},-\frac{3}{4\pi^4},-\frac{6-\pi^2}{6\pi^5},-\frac{5-2\pi^2}{4\pi^6}.
+\]</span></p></li>
+<li><p><span class="math inline">\(\infty\)</span>点留数为<span
+class="math inline">\(-1\)</span>倍的Laurent展开的<span
+class="math inline">\(z^{-1}\)</span>前系数, 即 <span
+class="math display">\[
+\text{Res}w(\infty)=\frac{3}{4\pi^4}.
+\]</span></p></li>
+</ol>
+</blockquote></li>
+</ol>
+<h2 id="留数定理">*留数定理</h2>
+<ul>
+<li><p>留数的求法:</p>
+<ul>
+<li><p>一阶极点: <span class="math display">\[
+r=\lim_{z\to b}(z-b)f(z);
+\]</span></p></li>
+<li><p><span class="math inline">\(m\)</span>阶极点: <span
+class="math display">\[
+r=\frac{1}{(m-1)!}\frac{\text{d}^{m-1}}{\text{d}z^{m-1}}(z-b)^mf(z).
+\]</span> 注意, 这一公式也可用于求<span
+class="math inline">\(n&lt;m\)</span>阶极点, 但对于<span
+class="math inline">\(n&gt;m\)</span>阶极点,
+这一公式会给出发散的结果.</p></li>
+<li><p>由于留数是<span class="math inline">\(a_{-1}\)</span>,
+因此可以直接利用基本公式求Laurent展开后得到.</p></li>
+<li><p><span class="math inline">\(\infty\)</span>点的留数: <span
+class="math display">\[
+\text{Res}f(\infty)=\frac{1}{2\pi i}\oint_{顺时针} f(z)\text{d}z.
+\]</span> 顺时针积分是由于我们所考虑的区域是<span
+class="math inline">\(|z|&gt;R\)</span>, 这样区域的正定向就是顺时针.</p>
+<ul>
+<li>这一留数也为<strong>负的</strong><span
+class="math inline">\(f\)</span>在<span
+class="math inline">\(\infty\)</span>点幂级数展开的<span
+class="math inline">\(z^{-1}\)</span>项的系数.</li>
+</ul></li>
+</ul></li>
+<li><p><span class="math inline">\(3\)</span>个重要引理.</p>
+<ul>
+<li><p><u>小圆弧引理</u>: 对<span class="math inline">\(b\)</span>点,
+若在<span class="math inline">\(\theta_1&lt;\theta_2\)</span>范围内,
+当<span class="math inline">\(z\to b\)</span>时<span
+class="math inline">\((z-b)f(z)\)</span><strong>一致地</strong>趋于<span
+class="math inline">\(K\)</span>, 那么 <span class="math display">\[
+\lim_{\delta\to 0^+}\int_{C_\delta} f(z)\text{d}z=iK(\theta_2-\theta_1).
+\]</span> 其中<span class="math inline">\(C_{\delta}\)</span>为绕<span
+class="math inline">\(b\)</span>点的逆时针<span
+class="math inline">\(\theta_1\to \theta_2\)</span>的以<span
+class="math inline">\(\delta\)</span>为半径的圆弧.</p></li>
+<li><p><u>大圆弧引理</u>: 对<span class="math inline">\(b\)</span>点,
+若在<span class="math inline">\(\theta_1&lt;\theta_2\)</span>范围内,
+当<span class="math inline">\(|z|\to\infty\)</span>时<span
+class="math inline">\((z-b)f(z)\)</span><strong>一致地</strong>趋于<span
+class="math inline">\(K\)</span>, 那么 <span class="math display">\[
+\lim_{R\to \infty}\int_{C_R} f(z)\text{d}z=iK(\theta_2-\theta_1).
+\]</span> 其中<span class="math inline">\(C_{R}\)</span>为绕<span
+class="math inline">\(b\)</span>点的逆时针<span
+class="math inline">\(\theta_1\to \theta_2\)</span>的以<span
+class="math inline">\(R\)</span>为半径的圆弧.</p></li>
+<li><p><u>Jordan引理</u>: 对<span class="math inline">\(p&gt;0\)</span>,
+在<span class="math inline">\(\arg z\in[0,\pi]\)</span> 范围上, 当<span
+class="math inline">\(z\to \infty\)</span>时<span
+class="math inline">\(Q(z)\)</span>一致地趋于<span
+class="math inline">\(0\)</span>, 那么 <span class="math display">\[
+\lim_{R\to \infty}\int_{C_R}e^{ipz}Q(z)\text{d}z=0.
+\]</span> 其中<span class="math inline">\(C_R\)</span>为绕原点的以<span
+class="math inline">\(R\)</span>为半径的上半圆弧.</p></li>
+</ul></li>
+<li><p>技巧和围道汇总. (以积分类型汇总)</p>
+<ul>
+<li><p>三角函数的周期积分: 换元<span
+class="math inline">\(z=e^{i\theta}\)</span>,
+转化为复平面单位圆上的积分.</p></li>
+<li><p>实数轴上的有理式的无穷积分:</p>
+<ul>
+<li><p>无奇点: 上半圆做围道积分.</p></li>
+<li><p>有奇点: 绕过奇点.
+但注意小圆弧引理给出的积分<strong>不一定是零</strong>.</p></li>
+<li><p>对于含<span class="math inline">\(z^n\)</span>的函数, 可以取<span
+class="math inline">\(0\sim 2\pi/n\)</span>的扇形围道,
+减少留数个数.</p></li>
+<li><p>一些<span class="math inline">\(0\)</span>到<span
+class="math inline">\(+\infty\)</span>的积分可以利用函数的奇偶性进行化简.</p></li>
+<li><p><span class="math inline">\(p(x)\)</span>是有理式, 则 <span
+class="math display">\[
+\int_{0}^{\infty}\frac{\text{d}x}{p(x)}
+\]</span> 可以利用 <span class="math display">\[
+\oint \frac{\ln z\text{d}z}{p(z)}
+\]</span> 来做积分.</p></li>
+</ul></li>
+<li><p>实轴上含三角函数的无穷积分:通过对<span
+class="math inline">\(e^{ipz}\)</span>取实部, 虚部可以转化为想要的积分,
+并且可以利用Jordan引理.</p>
+<ul>
+<li>特别地, 在取实部和虚部后, 函数的另外一个部分就有较大的自由度,
+可以任意地增添常数来化简求解过程.</li>
+</ul></li>
+<li><p>含多值函数的积分.</p>
+<ul>
+<li><p>两个常见围道:</p>
+<p><img src="./复变函数期末集体复习/fig5.png" style="zoom:25%;" />;<img src="./复变函数期末集体复习/fig6.png" style="zoom:25%;" /></p></li>
+<li><p>注意, 积分<strong>必须是沿割线进行</strong>的.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="例题-3">例题</h3>
+<ol type="1">
+<li><p>计算 <span class="math display">\[
+\int_0^{2\pi}\frac{(1-x\cos\theta)\text{d}\theta}{1-2x\cos\theta+x^2},\;
+x\in\R.
+\]</span></p>
+<blockquote>
+<p>解: 当<span class="math inline">\(x=0\)</span>, 积分为<span
+class="math inline">\(2\pi\)</span>; 对<span class="math inline">\(x=\pm
+1\)</span>,</p>
+<p>积分为 <span class="math display">\[
+\int_0^{2\pi}\frac{\text{d}\theta}{2}=\pi.
+\]</span> 下面讨论<span class="math inline">\(x\neq 0,\pm
+1\)</span>的情况. 此时积分可以化为 <span class="math display">\[
+\oint_{|z|=1}\frac{xz^2-2z+x}{2iz(xz^2-(1+x^2)z+x)}\text{d}z,
+\]</span> 当<span class="math inline">\(|x|&gt;1\)</span>,
+圆内奇点为<span class="math inline">\(0,1/x\)</span>. 两处的留数分别为
+<span class="math display">\[
+\text{Res}f(0)=\frac{1}{2i};\; \text{Res}f(1/x)=-\frac{1}{2i},
+\]</span> 积分为零.</p>
+<p>当<span class="math inline">\(|x|&lt;1\)</span>, 圆内奇点为<span
+class="math inline">\(0,x\)</span>. 两处的留数分别为 <span
+class="math display">\[
+\text{Res}f(0)=\frac{1}{2i};\; \text{Res}f(x)=\frac{1}{2i}.
+\]</span> 积分值为 <span class="math display">\[
+I=2\pi i \frac{1}{i}=2\pi.
+\]</span></p>
+</blockquote>
+<p><em>注: 一些物理直觉较好的同学可以看出, 这是<span
+class="math inline">\(x\)</span>处二维点电荷的电场通量.</em></p></li>
+<li><p>计算 <span class="math display">\[
+\int_0^{\pi}\frac{\cos n\theta}{1+\epsilon\cos \theta}\text{d}\theta, \;
+n\in\Z_+, 0&lt;\epsilon&lt;1.
+\]</span></p>
+<blockquote>
+<p>解: 由于<span class="math inline">\(\cos x\)</span>是偶函数,
+这一积分为<span class="math inline">\(-\pi\)</span>到<span
+class="math inline">\(\pi\)</span>积分的一半, 后者为圆上的积分: <span
+class="math display">\[
+I=\frac{1}{2i} \oint_{|z|=1}\frac{z^{2n}+1}{ z^n(\epsilon
+z^2+2z+\epsilon)}.
+\]</span> 奇点为<span
+class="math inline">\(0,(\sqrt{1-\epsilon^2}-1)/\epsilon\)</span>.
+在第二个奇点的留数为 <span class="math display">\[
+\text{Res}f((\sqrt{1-\epsilon^2}-1)/\epsilon)=\frac{1}{2\sqrt{1-\epsilon^2}}(z_+^n+z_-^n),
+\]</span> 其中<span
+class="math inline">\(z_{\pm}\)</span>为分母上二次方程的两个根,
+已经利用了<span class="math inline">\(z_+z_-=1\)</span>.
+第一个奇点处的留数略麻烦, 将函数改写为 <span class="math display">\[
+\frac{1}{\epsilon(z_+-z_-)}\left(z^n-\frac{1}{z^n}
+\right)\left(\frac{1}{z-z_-}-\frac{1}{z-z_+} \right),
+\]</span> 考虑在<span class="math inline">\(z=0\)</span>处的展开,
+显然<span class="math inline">\(z^n\)</span>不会贡献<span
+class="math inline">\(z^{-1}\)</span>项, 而第三项的展开为 <span
+class="math display">\[
+\frac{1}{z-z_-}-\frac{1}{z-z_+}=-\sum_{n=0}^{\infty}(z_+^{n+1}-z_-^{n+1})z^n,
+\]</span> 所关注的是<span class="math inline">\(n-1\)</span>次方项,
+为<span class="math inline">\(z_+^n-z_-^n\)</span>. 这样, <span
+class="math inline">\(0\)</span>处的留数为 <span class="math display">\[
+\text{Res}f(0)=\frac{z_+^n-z_-^n}{\epsilon(z_+-z_-)}=\frac{z_+^n-z_-^n}{2\sqrt{1-\epsilon^2}}.
+\]</span> 所以积分结果为 <span class="math display">\[
+I=\frac{\pi}{\sqrt{1-\epsilon^2}}\cdot\left(\frac{\sqrt{1-\epsilon^2}-1}{\epsilon}
+\right)^n.
+\]</span></p>
+</blockquote></li>
+<li><p>计算 <span class="math display">\[
+\text{v.p.} \int_{-\infty}^{\infty} \frac{\text{d}x}{x(1+x+x^2)}.
+\]</span></p>
+<blockquote>
+<p>解: 小圆弧上的<span class="math inline">\(-i\pi\)</span>,
+围道内的奇点为<span class="math inline">\(e^{i\frac{2}{3}\pi}\)</span>.
+这处的留数为 <span class="math display">\[
+\text{Res}f(e^{i\frac{2}{3}\pi
+})=-\frac{i}{\sqrt{3}}e^{-i\frac{2}{3}\pi}.
+\]</span> 积分值为 <span class="math display">\[
+I=i\pi+\frac{2\pi}{\sqrt{3}}\left(-\frac{1}{2}-\frac{\sqrt{3}}{2}i  \right)=-\frac{\pi}{\sqrt{3}}.
+\]</span></p>
+</blockquote></li>
+<li><p>计算 <span class="math display">\[
+\int_0^{\infty}\frac{1-\cos x}{x^2(1+x^2)}\text{d}x.
+\]</span></p>
+<blockquote>
+<p>解: 这是一偶函数, <span class="math inline">\(0\)</span>为可去奇点.
+<span class="math display">\[
+I=\frac{1}{2}\Re
+\int_{-\infty}^{\infty}\frac{1-e^{ix}}{x^2(1+x^2)}\text{d}x.
+\]</span> 但这样<span class="math inline">\(0\)</span>就成为一阶极点,
+可以补上一个<span class="math inline">\(ix\)</span>.
+容易判断大圆弧上的积分为零. 围道内奇点为<span
+class="math inline">\(i\)</span>, 留数为 <span class="math display">\[
+\text{Res}f(i)=\frac{e^{-1}}{2i}.
+\]</span> 这就得到了积分 <span class="math display">\[
+I=\frac{1}{2}2\pi i \frac{e^{-1}}{2i}=\frac{\pi}{2e}.
+\]</span></p>
+</blockquote></li>
+<li><p>计算 <span class="math display">\[
+\int_0^{\infty}\frac{x\ln x}{(x+1)^2(x-1)}\text{d}x.
+\]</span></p>
+<blockquote>
+<p>解: 容易预测到, 直接采取这一函数的积分会导致所求的积分被消去.
+需要考虑 <span class="math display">\[
+f(z)=\frac{z\ln^2z}{(z+1)^2(z-1)}.
+\]</span> 路径上上的<span class="math inline">\(1\)</span>为奇点.
+于是积分围道为</p>
+<p><img src="./复变函数期末集体复习/fig7.png" style="zoom:25%;" /></p>
+<p>大圆弧和<span
+class="math inline">\(C_{\delta_1}\)</span>上的积分为零. 于是 <span
+class="math display">\[
+\oint
+f(z)\text{d}z=4\pi^2\int_0^{\infty}\frac{x\text{d}x}{(x+1)^2(x-1)}-4\pi
+i \int_0^{\infty}\frac{x\ln
+x}{(x+1)^2(x-1)}\text{d}x+\int_{C_{\delta_2}}.
+\]</span> 我们考虑<span class="math inline">\(\delta_2\)</span>上的积分.
+在上半圆弧, 这一积分为零, 下半圆弧有 <span class="math display">\[
+\lim_{z\to 1} \frac{z(\ln z+2\pi i)^2}{(z+1)^2(z-1)}(z-1)=-\pi^2.
+\]</span> 于是下半圆弧上的积分为<span
+class="math inline">\(i\pi^3\)</span>. 设留数和为<span
+class="math inline">\(x+iy\)</span>, 有 <span class="math display">\[
+4\pi^2\int_0^{\infty}\frac{x\text{d}x}{(x+1)^2(x-1)}-4\pi i
+\int_0^{\infty}\frac{x\ln x}{(x+1)^2(x-1)}\text{d}x=2\pi i
+(x+iy)-i\pi^3,
+\]</span> 这样所求积分就表示为 <span class="math display">\[
+I=-\frac{1}{2}\Re \sum\text{Res}f+\frac{\pi^2}{4}.
+\]</span> 围道内的奇点为<span class="math inline">\(e^{i\pi}\)</span>,
+这处留数为 <span class="math display">\[
+\frac{\text{d}}{\text{d}z}\frac{z\ln^2z}{(z-1)}\bigg|_{z=e^{i\pi}}=\frac{\pi^2}{4}-i\pi.
+\]</span> 得到 <span class="math display">\[
+I=\frac{\pi^2}{8}.
+\]</span></p>
+</blockquote></li>
+</ol>
+<h2 id="gamma函数"><span class="math inline">\(\Gamma\)</span>函数</h2>
+<h3 id="知识梳理-2">知识梳理</h3>
+<ul>
+<li><p><span class="math inline">\(\Gamma(z)\)</span>定义为: <span
+class="math display">\[
+\Gamma(z)=\int_0^{\infty} t^{z-1}e^{-t}\text{d}t.
+\]</span></p>
+<ul>
+<li>这一积分可以沿着任意光滑曲线, 从<span
+class="math inline">\(0\)</span>到<span class="math inline">\(\Re t\to
++\infty\)</span>即可.</li>
+</ul></li>
+<li><p><span class="math inline">\(\Gamma\)</span>函数的基本性质:</p>
+<ul>
+<li>递推性质: <span
+class="math inline">\(\Gamma(z+1)=z\Gamma(z)\)</span>, <span
+class="math inline">\(\Gamma(1)=1\)</span>, <span
+class="math inline">\(\Gamma(n+1)=n!\)</span>. 这说明 <span
+class="math inline">\(\Gamma\)</span>函数与阶乘密切相关.</li>
+<li>互余公式: <span
+class="math inline">\(\Gamma(z)\Gamma(1-z)=\dfrac{\pi}{\sin \pi
+z}\)</span>. 由此得到<span
+class="math inline">\(\Gamma(z)\Gamma(-z)=-\dfrac{\pi}{z\sin \pi
+z}\)</span>.</li>
+<li>倍乘公式: <span
+class="math inline">\(\Gamma(2z)=2^{2z-1}\pi^{-1/2}\Gamma(z)\Gamma\left(z+\dfrac{1}{2}
+\right)\)</span>.</li>
+</ul></li>
+<li><p><span class="math inline">\(\Beta\)</span>函数:</p>
+<ul>
+<li><p>定义: <span class="math display">\[
+\Beta(p,q)=\int_0^1t^{p-1}(1-t)^{q-1}\text{d}t,\quad \Re p,\Re q&gt;0.
+\]</span></p></li>
+<li><p>性质: <span class="math display">\[
+\Beta(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},
+\]</span> 由此可以看出<span class="math inline">\(\Beta
+(p,q)=\Beta(q,p)\)</span>.</p></li>
+<li><p>一些积分可以转化为<span
+class="math inline">\(\Beta\)</span>函数的积分形式, 随后用<span
+class="math inline">\(\Gamma\)</span>函数的特殊值求出.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(\psi\)</span>函数:</p>
+<ul>
+<li><p>定义: <span class="math display">\[
+\psi (z)=\frac{\Gamma&#39;(z)}{\Gamma(z)}.
+\]</span></p></li>
+<li><p><span class="math inline">\(\psi\)</span>函数的性质:</p>
+<ul>
+<li><p>递推性质: <span class="math display">\[
+\psi(z+1)=\frac{1}{z}+\psi(z), \;
+\psi(z+n)=\psi(z)+\sum_{k=0}^{n-1}\frac{1}{z+k}
+\]</span> 可以看出, <span
+class="math inline">\(\psi\)</span>与调和级数有密切联系.</p>
+<p><span class="math inline">\(\psi (1)=-\gamma\)</span>, 其中$<span
+class="math inline">\(为欧拉常数, 定义为\)</span>$
+=<em>{n}</em>{i=1}^n-n. $$</p>
+<p><span class="math display">\[
+\psi
+(z)=-\gamma-\frac{1}{z}+\sum_{k=1}^{\infty}\left(\frac{1}{k}-\frac{1}{k+z}
+\right).
+\]</span></p></li>
+<li><p>互余公式: <span class="math display">\[
+\psi(1-z)=\psi (z)+\pi \cot \pi z.
+\]</span></p>
+<p><span class="math display">\[
+\psi (z)=\psi(-z)-\frac{1}{z}-\pi \cot\pi z.
+\]</span></p></li>
+<li><p>极限: <span class="math display">\[
+\lim_{n\to \infty}\psi(z+n)-\ln n=0.
+\]</span></p></li>
+<li><p>倍乘公式: <span class="math display">\[
+\psi(2z)=\frac{1}{2}\psi(z)+\frac{1}{2}\psi\left(z+\frac{1}{2}
+\right)+\ln 2.
+\]</span></p>
+<ul>
+<li>由此可以得到<span class="math inline">\(\psi\)</span>函数的半整数值:
+<span class="math display">\[
+\psi\left(\frac{1}{2} \right)=-\gamma-2\ln 2.
+\]</span></li>
+</ul></li>
+</ul></li>
+<li><p>利用<span class="math inline">\(\psi\)</span>函数计算无穷级数.
+对于一些分子为有理式的级数: <span class="math display">\[
+\sum_{n=0}^{\infty}\frac{1}{p(n)},\quad \deg p\ge 2, p\neq 0.
+\]</span> 我们可以将其裂项为多个调和级数的和. 即 <span
+class="math display">\[
+\frac{1}{p(n)}=\sum_{k=1}^m \frac{a_k}{n+b_k},\quad \sum_{k=1}^m a_k=0.
+\]</span> 对于有限项的求和, 可以用<span
+class="math inline">\(\psi\)</span>函数表示. <span
+class="math display">\[
+\sum_{n=0}^N \sum_{k=1}^m \frac{a_k}{n+b_k}=\sum_{k=1}^m\sum_{n=0}^{N}
+\frac{a_k}{n+b_k}=\sum_{k=1}^m a_k(\psi(N+1+b_k)-\psi(b_k))\\
+=\sum_{k=1}^m a_k(\psi(N+1+b_k)-\psi(b_k)-\ln (N+1)),
+\]</span> 取<span class="math inline">\(N\to \infty\)</span>的极限就有
+<span class="math display">\[
+\sum_{n=0}^{\infty}\frac{1}{p(n)}=-\sum_{k=1}^ma_k \psi (b_k).
+\]</span></p></li>
+</ul></li>
+</ul>
+<h3 id="例题-4">例题</h3>
+<ol type="1">
+<li><p>计算 <span class="math display">\[
+\int_0^{\frac{\pi}{2}}\tan^{\alpha}x\text{d}x.
+\]</span></p>
+<blockquote>
+<p>解: 利用<span class="math inline">\(\Beta\)</span>函数的积分形式:
+<span class="math display">\[
+B(p,q)=2\int_0^{\pi/2}\sin^{2p-1}\theta\cos ^{2q-1}\theta\text{d}\theta,
+\]</span> 得到积分值为 <span class="math display">\[
+I=\frac{1}{2}\Beta \left(\frac{1+\alpha}{2},\frac{1-\alpha}{2} \right)\\
+=\frac{\Gamma(\frac{1+\alpha}{2})\Gamma(\frac{1-\alpha}{2})}{2\Gamma(1)}=\frac{\pi}{2\cos
+\frac{\alpha\pi}{2} }.
+\]</span></p>
+</blockquote></li>
+<li><p>计算 <span class="math display">\[
+\int_0^{\infty}x^{-1/2}\sin x\text{d}x.
+\]</span></p>
+<blockquote>
+<p>解: <span class="math inline">\(\Gamma(z)\)</span>可以转化为积分:
+<span class="math display">\[
+\Gamma(z)=\int_L t^{z-1}e^{-t}\text{d}t,
+\]</span> 其中<span class="math inline">\(L\)</span>为<span
+class="math inline">\(0\)</span>到无穷远点的射线. 考虑虚轴上的积分:
+<span class="math display">\[
+\Gamma(z)=i^z \int_0^{\infty}t^{z-1}e^{-it}\text{d}t.
+\]</span> 带入<span class="math inline">\(z=1/2\)</span>, 得到 <span
+class="math display">\[
+\sqrt{\pi}=\frac{\sqrt{2}}{2}(1+i)\int_0^{\infty}x^{-1/2}(\cos x-i\sin
+x)\text{d}x.
+\]</span> 积分的实部和虚部分别为<span
+class="math inline">\(A,-B\)</span>, 所求积分为<span
+class="math inline">\(B\)</span>. 等式给出: <span
+class="math display">\[
+\sqrt{\pi}=\frac{\sqrt{2}}{2}(A+B)+i\frac{\sqrt{2}}{2}(A-B),
+\]</span> 实部和虚部分别相等的条件就解出: <span class="math display">\[
+I=\sqrt{\frac{\pi}{2}}.
+\]</span></p>
+</blockquote></li>
+<li><p><span class="math inline">\(\psi\)</span>函数相关.</p>
+<ol type="1">
+<li><p>证明: <span class="math inline">\(ψ(z+n)−ψ(z)= \frac{1}{z} +···+
+\frac{1}{z+n-1}\)</span>.</p></li>
+<li><p>证明: <span class="math inline">\(ψ(z)−ψ(−z)=−\frac{1}{z} −π\cot
+πz\)</span>.</p></li>
+<li><p>根据前面的结果求解无穷级数<span
+class="math inline">\(\sum_{n=0}^{\infty}\frac{1}{n^2+a^2}\)</span>，其中<span
+class="math inline">\(a\)</span>是正实数.</p>
+<p><em>提示：<span class="math inline">\(\lim_{n→∞} [ψ(z +n)−\ln
+n]=0\)</span>.</em></p></li>
+</ol>
+<blockquote>
+<p>解:</p>
+<ol type="1">
+<li><p>略;</p></li>
+<li><p>利用 <span class="math display">\[
+\psi(1-z)=-\frac{1}{z}+\psi(-z),
+\]</span> 和互余公式即得.</p></li>
+<li><p>级数的通项为 <span class="math display">\[
+\frac{1}{2ia}\left(\frac{1}{z-ia}-\frac{1}{z+ia}\right),
+\]</span> 根据之前的公式: <span class="math display">\[
+\sum=\frac{1}{2ia}(\psi(ia)-\psi(-ia))=\frac{1}{2ia}\left(-\frac{1}{ia}-\pi
+\cot \pi ia  \right)=\frac{1}{2a^2}\left( 1+\pi a \coth \pi a\right).
+\]</span></p></li>
+</ol>
+</blockquote></li>
+<li><p>求级数和: <span class="math display">\[
+\sum_{n=1}^{\infty}\frac{1}{n(4n^2-1)}.
+\]</span></p>
+<blockquote>
+<p>解: 级数改写为 <span class="math display">\[
+\sum_{n=0}^{\infty}\left(-\frac{1}{n+1}+\frac{1}{2}\frac{1}{n+\frac{3}{2}}+\frac{1}{2}\frac{1}{n+\frac{1}{2}}
+\right),
+\]</span> 利用公式: <span class="math display">\[
+\sum =
+-\left(-\psi(1)+\frac{1}{2}\psi\left(\frac{3}{2}\right)+\frac{1}{2}\psi
+\left(\frac{1}{2} \right) \right)=2\ln 2-1.
+\]</span></p>
+</blockquote></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>KunziBa
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2025/06/10/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0/" title="复变函数期末集体复习">http://example.com/2025/06/10/复变函数期末集体复习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%B2%E4%B9%89/" rel="tag"># 讲义</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/03/23/Electrodynamics%20in%20Frame%20of%20Analytical%20Mechanics/" rel="prev" title="从分析力学到电动力学">
+      <i class="fa fa-chevron-left"></i> 从分析力学到电动力学
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%9B%86%E4%BD%93%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">复变函数期末集体复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">解析函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86"><span class="nav-number">1.1.1.</span> <span class="nav-text">知识梳理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">1.1.2.</span> <span class="nav-text">例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cauchy%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">Cauchy积分公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%80%BC%E5%87%BD%E6%95%B0%E5%92%8Claurent%E5%B1%95%E5%BC%80"><span class="nav-number">1.3.</span> <span class="nav-text">*多值函数和Laurent展开</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">知识梳理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">*留数定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gamma%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">\(\Gamma\)函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">知识梳理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-4"><span class="nav-number">1.5.2.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="KunziBa"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">KunziBa</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="/bkz2007@126.com" title="E-Mail → bkz2007@126.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/bkz-65" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;bkz-65" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fas fa-cloud"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KunziBa</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">16k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:01</span>
+</div>
+
+
+    <script async src="/js/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+ 
+
+        
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":true}});</script></body>
+</html>
